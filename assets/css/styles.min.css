@@ -15057,6 +15057,22 @@ ul#menu-header-left-menu li.menu-item-has-children:hover > a::after{
   display: none;
 }
 
+#acf-field_5ed66d2507a5f,
+#acf-field_5eed9e2bd5716{
+  border:1px solid #C8C8DB;
+  padding: 16px;
+  height: 48px;
+}
+
+#acf-field_5ed66d2507a5f::placeholder{
+  color: #C8C8DB;
+  font-family: "Lato", sans-serif;;
+}
+
+#acf-field_5eed9e2bd5716{
+  height: auto;
+}
+
 /*==========  Desktop First  ==========*/
 @media (max-width: 1199.98px) {
   .nav-top-left {
