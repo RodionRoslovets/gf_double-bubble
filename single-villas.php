@@ -219,6 +219,7 @@ while (have_posts()) :
                             </div>
                         </div>
                         <?php endif; ?>
+                        
                         <div class="villa-top-page__info-block mobile-visible">
                             <?php $price_day = get_field('price_day') ?>
                             <table class="price-day">
@@ -353,6 +354,18 @@ while (have_posts()) :
                                 </div>
                             </div>
                         </div>
+                        <?php
+                                $menu = get_field('villa_menu');
+                                if( $menu ): ?>
+                                    <div class="restaurant-top-page__info-menu desktop-visible">
+                                        <p><img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/menu.svg" alt=""></p>
+                                        <a href="#" class="open-menu">Open menu</a>
+                                    </div>
+                                    <div class="restaurant-top-page__info-menu mobile-visible" style="margin-top: 20px;">
+                                        <p><img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/menu.svg" alt=""></p>
+                                        <a href="#" class="open-menu">Open menu</a>
+                                    </div>
+                                <?php endif; ?>
                             <div class="villa-top-page__info-favorites desktop-visible">
                                 <!--                                <p><img src="-->
                                 <?php //echo get_template_directory_uri();
@@ -496,6 +509,26 @@ while (have_posts()) :
         </div>
     </section>
     <?php endif; ?>
+
+    <section class="menu-slider">
+        <div class="container">
+            <div class="row">
+                <?php
+                $menu = get_field('villa_menu');
+                if( $menu ): ?>
+                    <div class="menu-foto-slider" data-width="100%" data-nav="thumbs" data-autoplay="false" data-allowfullscreen="native" style="width:100%">
+                        <?php foreach( $menu as $image ): ?>
+                            <a href="<?php echo esc_url($image['url']); ?>"><img src="<?php echo esc_url($image['url']); ?>"></a>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+        <a class="close-menu-slider" href="#">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/cross-modal.svg" alt="">
+        </a>
+
+    </section>
 
 <?php
 

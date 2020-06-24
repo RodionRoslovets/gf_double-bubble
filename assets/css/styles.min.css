@@ -13630,6 +13630,7 @@ form.search-form.active-form {
 .modal-contact-owner__active {
   visibility: visible;
   opacity: 1;
+  background:rgba(0,0,0,.4);
 }
 
 .form-contact-owner {
@@ -13692,6 +13693,7 @@ form.search-form.active-form {
   -ms-flex: 1;
   flex: 1;
   padding-left: 16px;
+  border:1px solid #c8c8db;
 }
 
 .form-contact-owner form textarea {
