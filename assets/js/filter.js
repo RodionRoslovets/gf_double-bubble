@@ -131,7 +131,7 @@ jQuery(function ($) {
 
     //При инициализации почему то срабатывает запрос
     $("#slider-range").slider({
-        change: function (event, ui) {
+        stop: function (event, ui) {
             // let linkP = location.href;
             let filter = $(this);
             let dataArray = filter.serializeArray();

@@ -68,16 +68,18 @@ get_header('secondary');
                             </form>
                         </div>
 
+                        <?php $res = gf_get_min_max_by_type('villas', 'villa_data_price');?>
+
                         <div class="search-price" >
                             <form action="" method="POST">
                             <h5>Price</h5>
                             <div class="search-price__price">
                                 <div class="search-price__price-in">
-                                <span><input type="text" id="amount" name="min_price"  readonly />
+                                <span><input type="text" id="amount" name="min_price" value=<?php echo $res["min_price"] ?>  readonly />
 </span><span>$</span>
                                 </div>
                                 <div class="search-price__price-out">
-                                <span><input type="text" id="amount2" name="max_price" readonly />
+                                <span><input type="text" id="amount2" name="max_price" value=<?php echo $res["max_price"] ?> readonly />
 </span><span>$</span>
                                 </div>
                             </div>
@@ -255,7 +257,108 @@ get_header('secondary');
 
                     </div>
                     <div class="col-lg-9">
-                        <div id="response"></div>
+                        <div id="response">
+                           <?php if (have_posts()) :
+
+        while (have_posts()): the_post();
+            // adapted for Twenty Seventeen theme
+            ?>
+            <div class="villas-item">
+                <a href="<?php the_permalink(); ?>" class="link-page"></a>
+                <a href="<?php the_permalink(); ?>" class="villas-item__image">
+                    <?php the_post_thumbnail(); ?>
+                </a>
+                <?php $villa_data = get_field('villa_data'); ?>
+                <div class="villas-item__info">
+                    <div class="villas-item__info_col">
+                        <a href="<?php the_permalink(); ?>"><h4><?php the_title() ?></h4></a>
+                        <a href="<?php echo $villa_data['addres_link'] ?>"  target="_blank" class="villas-item__address"><?php echo $villa_data['address'] ?></a>
+                        <?php the_excerpt(); ?>
+                        <span class="villas-item__see-m">100 m to the sea</span>
+                    </div>
+                    <div class="villas-item__info_col rating-price">
+                        <div class="rating-group">
+                            <?php echo do_shortcode('[average_rating]') ?>
+<!--                            <span class="rating-group_count-villa">9.2</span>-->
+<!--                            <div class="rating-group_reviews">-->
+<!--                                <div class="star-block">-->
+<!--                                    <img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-full.svg"-->
+<!--                                         alt="">-->
+<!--                                    <img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-full.svg"-->
+<!--                                         alt="">-->
+<!--                                    <img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-full.svg"-->
+<!--                                         alt="">-->
+<!--                                    <img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-empty.svg"-->
+<!--                                         alt="">-->
+<!--                                    <img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-empty.svg"-->
+<!--                                         alt="">-->
+<!--                                </div>-->
+<!--                                <span class="rating-group_reviews-count">-->
+<!--                                    57 reviews-->
+<!--                                </span>-->
+<!--                            </div>-->
+                        </div>
+                        <div class="villas-item__price">
+                            <span class="villas-item__price-count"><?php echo $villa_data['price'] ?></span><span>$</span>
+                        </div>
+                        <a href="<?php the_permalink(); ?>" class="choose-room-btn">Choose a room</a>
+                    </div>
+
+                </div>
+<!--                <a class="like-btn" href="#"><img-->
+<!--                        src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/blue-heart.svg"-->
+<!--                        alt=""></a>-->
+                <?php echo do_shortcode('[favorite_button]') ?>
+            </div>
+
+<!--        --><?php //var_dump($villa_data); ?>
+        <?php endwhile;
+
+    else: ?>
+        <p>Nothing found for your criteria.</p>
+        <a href="<?php basename(); ?>/villas/">At the beginning</a>
+    <?php
+    endif;
+
+    ?>
+
+    <div class="pagination-block">
+    <div class="pagination-left">
+        <form action="" method="POST">
+                <p>Show</p>
+                <label>10
+                <input type="radio" id="page10" name="count_page" value="10"></label>
+                <label>20
+                <input type="radio" id="page20" name="count_page" value="20"></label>
+                <label>30
+                <input type="radio" id="page30" name="count_page" value="30"></label>
+
+    <!--            <span>10</span>-->
+    <!--            <a href="#">20</a>-->
+    <!--            <a href="#">30</a>-->
+        </form>
+    </div>
+    <div class="pagination-right">
+        <?php $args = array(
+            'show_all' => false, // показаны все страницы участвующие в пагинации
+            'end_size' => 1,     // количество страниц на концах
+            'mid_size' => 1,     // количество страниц вокруг текущей
+            'prev_next' => true,  // выводить ли боковые ссылки "предыдущая/следующая страница".
+            'prev_text' => '<img src="' . get_template_directory_uri() . '/assets/img/icons/pagin-arr-left.svg" alt="">',
+            'next_text' => '<img src="' . get_template_directory_uri() . '/assets/img/icons/pagin-arr-right.svg" alt="">',
+            'add_args' => false, // Массив аргументов (переменных запроса), которые нужно добавить к ссылкам.
+            'add_fragment' => '',     // Текст который добавиться ко всем ссылкам.
+
+        );
+
+        $pagination = get_the_posts_pagination($args);
+
+        echo str_replace('wp-admin/admin-ajax.php', 'villas', $pagination); ?>
+
+    </div>
+    </div>
+
+                        </div>
                     </div>
 
 

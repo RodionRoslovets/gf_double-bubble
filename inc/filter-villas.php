@@ -171,6 +171,7 @@ function true_filter_function(){
 
 
 
+
     query_posts( $args );
 
 //    echo json_encode($_POST);

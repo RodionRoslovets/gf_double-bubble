@@ -304,3 +304,22 @@ function wpp_get_extremes_price_in_product_cat( $term_id ) {
     return $prices;
     
   }
+
+function gf_get_min_max_by_type($post_type, $field_name){
+    global $wpdb;
+    $sql = "SELECT meta_value FROM {$wpdb->posts} INNER JOIN {$wpdb->postmeta} ON ({$wpdb->posts}.ID = {$wpdb->postmeta}.post_id) WHERE {$wpdb->posts}.post_type = '{$post_type}' AND {$wpdb->posts}.post_status = 'publish' AND {$wpdb->postmeta}.meta_key = '{$field_name}'";
+    $result = $wpdb->get_results( $wpdb->prepare($sql));
+
+    $nums = array();
+
+    foreach($result as $price_item){
+        $nums[] = (float)$price_item->meta_value;
+    }
+
+    $prices = array(
+        'min_price' => min($nums),
+        'max_price' => max($nums),
+    );
+
+    return $prices;
+}
