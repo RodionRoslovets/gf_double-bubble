@@ -14843,6 +14843,13 @@ ul#menu-header-left-menu li.menu-item-has-children:hover > a::after{
   font-size:24px;
 }
 
+.filter-grid-events__district{
+  border:none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
 .lawyer-form__form span[role="alert"]{
   position:absolute;
 }

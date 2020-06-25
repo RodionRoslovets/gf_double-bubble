@@ -40,13 +40,25 @@ function true_filter_events(){
 
         'orderby' => 'date',
         'order' => $_POST['grid-date'],
-
     );
 
 
 
 
     // для таксономий
+
+    if($_POST['grid-district']){
+        $args['tax_query'] = [
+            'relation' => 'AND',
+            [
+                'taxonomy' => 'events_district',
+                'field' => 'name',
+                'terms'    => $_POST['grid-district'],
+                'operator' => 'IN'
+            ],
+        ];
+    }
+    
 //    if( isset( $_POST['categoryfilter'] ))
 //
 //    $args['tax_query'] = array(

@@ -129,7 +129,6 @@ jQuery(function ($) {
         });
     }
 
-    //При инициализации почему то срабатывает запрос
     $("#slider-range").slider({
         stop: function (event, ui) {
             // let linkP = location.href;
@@ -187,6 +186,7 @@ jQuery(function ($) {
             { name: "grid-price", value: select },
             ...dataTerms
         );
+        
         $.ajax({
             url: ajax_pagination.ajaxurl, // обработчик
             data: dataArray, // данные
@@ -273,7 +273,7 @@ jQuery(function ($) {
         ajaxPageEvents(location.href);
     }, false);
 
-    let count_page_events = '';
+    let count_page_events = '10';
     mainBoxEvents.on('input', '.pagination-left form input', function () {
         count_page_events = $(this).val();
     });
@@ -298,7 +298,8 @@ jQuery(function ($) {
         let dataArray = filter.serializeArray();
         let val = $("#slider-range").slider('values');
         let min_price = val[0];
-        let max_price = val[1];
+        let max_price = val[1],
+        selectedDistrict = document.querySelectorAll('.events-form .filter-grid-events__district')[0].value;
         dataArray.push(
             { name: "action", value: 'events' },
             { name: "link", value: linkPageEvents },
@@ -307,6 +308,7 @@ jQuery(function ($) {
             { name: "count_page", value: count_page_events },
             { name: "grid-price", value: select },
             { name: "grid-date", value: date_value },
+            {name:'grid-district', value:selectedDistrict},
         );
         // console.log(dataArray);
         $.ajax({
@@ -338,17 +340,19 @@ jQuery(function ($) {
         let dataArray = filter.serializeArray();
         let val = $("#slider-range").slider('values');
         let min_price = val[0];
-        let max_price = val[1];
+        let max_price = val[1],
+        selectedDistrict = document.querySelectorAll('.events-form .filter-grid-events__district')[0].value;
         dataArray.push(
             { name: "action", value: 'events' },
+            {name:'grid-district', value:selectedDistrict},
             // {name: "grid-date", value: date_value},
             // {name: "link", value: linkP,},
             // {name: "min_price", value: min_price},
             // {name: "max_price", value: max_price},
             // {name: "grid-price", value: select},
-            { name: "count_page", value: count_page_events },
+            // { name: "count_page", value: count_page_events },
         );
-        // console.log(dataArray);
+        console.log(dataArray);
         $.ajax({
             url: ajax_pagination_events.ajaxurl, // обработчик
             data: dataArray, // данные
@@ -367,7 +371,7 @@ jQuery(function ($) {
         return false;
     });
 
-    $('.filter-grid-events').on('change', 'form', function () {
+    $('.filter-grid-events').on('change', 'form.events-form', function () {
         // console.log(this);
         let date_value = '';
         let linkP = location.href;
@@ -385,7 +389,7 @@ jQuery(function ($) {
             // {name: "grid-date", value: date_value},
             // {name: "meta_value_num", value: 'meta_value_num'},
         );
-        // console.log(dataArray);
+        console.log(dataArray);
         $.ajax({
             url: ajax_pagination_events.ajaxurl,
             data: dataArray,

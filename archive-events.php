@@ -27,9 +27,24 @@ get_header('secondary');
 <!--                            </ul>-->
 <!--                        </div>-->
                         <div class="filter-grid-events">
+                        <form action="" class="events-form" method="POST">
+                            <p>filter: </p>
+                            <select class="filter-grid-events__district" name="grid-district">
+                                    <option value="">-District-</option>
+                                    <?php
+                                        $districts_terms = get_terms( [
+                                            'taxonomy' => 'events_district',
+                                            'hide_empty' => true,
+                                            'childless'     => false,
+                                        ] );
+                                        foreach($districts_terms as $term){
+                                            echo "<option value='{$term->name}'>{$term->name}</option>";
+                                        }
+                                    ?>
+                            </select>
                             <img class="mobile-filter" src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/sort.svg" alt="">
                             <p>sorting:</p>
-                            <form action="" method="POST">
+                            
 <!--                                <label class="filter-grid__active">rating-->
 <!--                                    <input type="checkbox" name="rating_sort">-->
 <!--                                </label>-->
