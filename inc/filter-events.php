@@ -58,6 +58,17 @@ function true_filter_events(){
             ],
         ];
     }
+    if($_POST['grid-day-night']){
+        $args['tax_query'] = [
+            'relation' => 'AND',
+            [
+                'taxonomy' => 'events_day_night',
+                'field' => 'name',
+                'terms'    => $_POST['grid-day-night'],
+                'operator' => 'IN'
+            ],
+        ];
+    }
     
 //    if( isset( $_POST['categoryfilter'] ))
 //

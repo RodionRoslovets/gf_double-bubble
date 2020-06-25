@@ -299,7 +299,8 @@ jQuery(function ($) {
         let val = $("#slider-range").slider('values');
         let min_price = val[0];
         let max_price = val[1],
-        selectedDistrict = document.querySelectorAll('.events-form .filter-grid-events__district')[0].value;
+        selectedDistrict = document.querySelectorAll('.events-form .filter-grid-events__district')[0].value,
+        selectedDayNight = document.querySelectorAll('.events-form .filter-grid-events__day-night')[0].value;
         dataArray.push(
             { name: "action", value: 'events' },
             { name: "link", value: linkPageEvents },
@@ -309,6 +310,7 @@ jQuery(function ($) {
             { name: "grid-price", value: select },
             { name: "grid-date", value: date_value },
             {name:'grid-district', value:selectedDistrict},
+            {name:'grid-day-night', value:selectedDayNight},
         );
         // console.log(dataArray);
         $.ajax({
@@ -341,10 +343,12 @@ jQuery(function ($) {
         let val = $("#slider-range").slider('values');
         let min_price = val[0];
         let max_price = val[1],
-        selectedDistrict = document.querySelectorAll('.events-form .filter-grid-events__district')[0].value;
+        selectedDistrict = document.querySelectorAll('.events-form .filter-grid-events__district')[0].value,
+        selectedDayNight = document.querySelectorAll('.events-form .filter-grid-events__day-night')[0].value;
         dataArray.push(
             { name: "action", value: 'events' },
             {name:'grid-district', value:selectedDistrict},
+            {name:'grid-day-night', value:selectedDayNight},
             // {name: "grid-date", value: date_value},
             // {name: "link", value: linkP,},
             // {name: "min_price", value: min_price},

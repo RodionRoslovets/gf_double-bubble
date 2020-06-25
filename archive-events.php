@@ -42,6 +42,19 @@ get_header('secondary');
                                         }
                                     ?>
                             </select>
+                            <select class="filter-grid-events__day-night" name="grid-day-night">
+                                    <option value="">-Day/Night-</option>
+                                    <?php
+                                        $districts_terms = get_terms( [
+                                            'taxonomy' => 'events_day_night',
+                                            'hide_empty' => true,
+                                            'childless'     => false,
+                                        ] );
+                                        foreach($districts_terms as $term){
+                                            echo "<option value='{$term->name}'>{$term->name}</option>";
+                                        }
+                                    ?>
+                            </select>
                             <img class="mobile-filter" src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/sort.svg" alt="">
                             <p>sorting:</p>
                             
