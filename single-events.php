@@ -53,6 +53,12 @@ the_post();
                             <p class="mini-title-event">Ticket</p>
                             <p class="price-event-cost"><?php echo esc_html( $event['price'] ); ?> <span>&#36;</span></p>
                         </div>
+                        
+                        <?php if($event['club_link']):?>
+                            <div class="to-club-event">
+                                <p><a href="<?php echo esc_html( $event['club_link'] ); ?>">To club page</a></p>
+                            </div>
+                        <?php endif; ?>
 
                         <div class="name-event">
                             <p class="mini-title-event">Location</p>
@@ -116,6 +122,12 @@ the_post();
                         <div class="event-date">
                             <p><?php echo esc_html( $event['date'] ); ?></p>
                         </div>
+
+                        <?php if($event['club_link']):?>
+                            <div class="to-club-event">
+                                <p><a href="<?php echo esc_html( $event['club_link'] ); ?>">To club page</a></p>
+                            </div>
+                        <?php endif; ?>
 
                         <div class="block-price-event">
                             <div class="price-event">

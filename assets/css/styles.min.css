@@ -14855,6 +14855,10 @@ ul#menu-header-left-menu li.menu-item-has-children:hover > a::after{
   position:absolute;
 }
 
+.to-club-event{
+  padding:24px 0 0 0;
+}
+
 @media (max-width: 1200px) {
   .show-child-comment {
     width: 20%;
