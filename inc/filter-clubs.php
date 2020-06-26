@@ -63,6 +63,28 @@ function true_filter_clubs(){
     );
 
 
+    if($_POST['grid-district']){
+        $args['tax_query'] = [
+            'relation' => 'AND',
+            [
+                'taxonomy' => 'clubs_district',
+                'field' => 'name',
+                'terms'    => $_POST['grid-district'],
+                'operator' => 'IN'
+            ],
+        ];
+    }
+    if($_POST['grid-day-night']){
+        $args['tax_query'] = [
+            'relation' => 'AND',
+            [
+                'taxonomy' => 'clubs_day_night',
+                'field' => 'name',
+                'terms'    => $_POST['grid-day-night'],
+                'operator' => 'IN'
+            ],
+        ];
+    }
 
 
     // для таксономий
@@ -152,6 +174,7 @@ function true_filter_clubs(){
         /* Start the Loop */
     if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         <!-- post -->
+        <div class="col-md-4" style="margin-bottom:30px">
         <div class="clubs-item">
             <a href="<?php the_permalink(); ?>" class="link-page"></a>
 
@@ -169,6 +192,7 @@ function true_filter_clubs(){
             </div>
 <!--            <a class="like-btn" href="#"><img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/blue-heart.svg" alt=""></a>-->
             <?php echo do_shortcode('[favorite_button]') ?>
+        </div>
         </div>
 
     <?php endwhile; ?>

@@ -119,7 +119,7 @@ jQuery(function ($) {
                 if (posts) {
 
                     mainBox.html(posts); // insert new posts
-                    console.log(dataArray);
+                    // console.log(dataArray);
                 }
 
                 mainBox.animate({ opacity: 1 }, 300);
@@ -146,7 +146,7 @@ jQuery(function ($) {
                 { name: "grid-price", value: select },
                 ...dataTerms
             );
-            console.log(`$("#slider-range").slider`)
+            // console.log(`$("#slider-range").slider`)
             $.ajax({
                 url: ajax_pagination.ajaxurl, // обработчик
                 data: dataArray, // данные
@@ -234,7 +234,7 @@ jQuery(function ($) {
                 if (posts) {
 
                     mainBox.html(posts); // insert new posts
-                    console.log(dataArray);
+                    // console.log(dataArray);
                 }
 
                 mainBox.animate({ opacity: 1 }, 300);
@@ -356,7 +356,7 @@ jQuery(function ($) {
             // {name: "grid-price", value: select},
             // { name: "count_page", value: count_page_events },
         );
-        console.log(dataArray);
+        // console.log(dataArray);
         $.ajax({
             url: ajax_pagination_events.ajaxurl, // обработчик
             data: dataArray, // данные
@@ -393,7 +393,7 @@ jQuery(function ($) {
             // {name: "grid-date", value: date_value},
             // {name: "meta_value_num", value: 'meta_value_num'},
         );
-        console.log(dataArray);
+        // console.log(dataArray);
         $.ajax({
             url: ajax_pagination_events.ajaxurl,
             data: dataArray,
@@ -606,7 +606,9 @@ jQuery(function ($) {
         // let linkP = location.href;
         // console.log(this);
         let filter = $(this);
-        let dataArray = filter.serializeArray();
+        let dataArray = filter.serializeArray(),
+        selectedDistrict = document.querySelectorAll('.clubs-form .filter-grid-clubs__district')[0].value,
+        selectedDayNight = document.querySelectorAll('.clubs-form .filter-grid-clubs__day-night')[0].value;
         // let val = $( "#slider-range" ).slider('values');
         // let min_price = val[0];
         // let max_price = val[1];
@@ -617,6 +619,8 @@ jQuery(function ($) {
             // {name: "max_price", value: max_price},
             { name: "count_page", value: count_page },
             { name: "grid-price", value: select },
+            {name:'grid-district', value:selectedDistrict},
+            {name:'grid-day-night', value:selectedDayNight},
         );
         // console.log(dataArray);
         $.ajax({
@@ -645,12 +649,16 @@ jQuery(function ($) {
         // console.log(this);
         // let linkP = location.href;
         let filter = $(this);
-        let dataArray = filter.serializeArray();
+        let dataArray = filter.serializeArray(),
+        selectedDistrict = document.querySelectorAll('.clubs-form .filter-grid-clubs__district')[0].value,
+        selectedDayNight = document.querySelectorAll('.clubs-form .filter-grid-clubs__day-night')[0].value;
         // let val = $( "#slider-range" ).slider('values');
         // let min_price = val[0];
         // let max_price = val[1];
         dataArray.push(
             { name: "action", value: 'clubs' },
+            {name:'grid-district', value:selectedDistrict},
+            {name:'grid-day-night', value:selectedDayNight},
             // {name: "link", value: linkP,},
             // {name: "min_price", value: min_price},
             // {name: "max_price", value: max_price},
@@ -673,6 +681,46 @@ jQuery(function ($) {
             }
         });
         return false;
+    });
+
+    $('form.clubs-form').on('change', function () {
+        // console.log(this);
+        let date_value = '';
+        let linkP = location.href;
+        let filter = $(this);
+        let dataArray = filter.serializeArray();
+        // let val = $( "#slider-range" ).slider('values');
+        // let min_price = val[0];
+        // let max_price = val[1];
+        dataArray.push(
+            { name: "action", value: 'clubs' },
+            // {name: "link", value: linkP,},
+            // {name: "min_price", value: min_price},
+            // {name: "max_price", value: max_price},
+            { name: "count_page", value: count_page },
+            // {name: "grid-date", value: date_value},
+            // {name: "meta_value_num", value: 'meta_value_num'},
+        );
+        console.log(dataArray);
+        $.ajax({
+            url: ajax_pagination_events.ajaxurl,
+            data: dataArray,
+            type: 'POST',
+            beforeSend: function (xhr) {
+                mainBoxClubs.animate({ opacity: 0.7 }, 300);
+                console.log(1)
+            },
+            success: function (posts) {
+                if (posts) {
+
+                    mainBoxClubs.html(posts); // insert new posts
+                }
+
+                mainBoxClubs.animate({ opacity: 1 }, 300);
+
+            }
+
+        });
     });
 
 
@@ -907,7 +955,7 @@ jQuery(function ($) {
                 if (posts) {
 
                     mainBoxRentTransport.html(posts); // insert new posts
-                    console.log(dataArray);
+                    // console.log(dataArray);
                 }
 
                 mainBoxRentTransport.animate({ opacity: 1 }, 300);
@@ -945,7 +993,7 @@ jQuery(function ($) {
                 success: function (posts) {
 
                     mainBoxRentTransport.html(posts);
-                    console.log(dataTerms);
+                    // console.log(dataTerms);
 
                     mainBoxRentTransport.animate({ opacity: 1 }, 300);
 
@@ -1020,7 +1068,7 @@ jQuery(function ($) {
                 if (posts) {
 
                     mainBoxRentTransport.html(posts); // insert new posts
-                    console.log(dataArray);
+                    // console.log(dataArray);
                 }
 
                 mainBoxRentTransport.animate({ opacity: 1 }, 300);

@@ -14844,12 +14844,22 @@ ul#menu-header-left-menu li.menu-item-has-children:hover > a::after{
 }
 
 .filter-grid-events__district,
-.filter-grid-events__day-night{
+.filter-grid-events__day-night,
+.filter-grid-clubs__district,
+.filter-grid-clubs__day-night{
   border:none;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
 }
+
+.filter-grid-clubs__district,
+.filter-grid-clubs__day-night{
+  cursor: pointer;
+  margin-right: 14px;
+  color: #0085ff;
+}
+
 
 .lawyer-form__form span[role="alert"]{
   position:absolute;
@@ -14899,7 +14909,8 @@ ul#menu-header-left-menu li.menu-item-has-children:hover > a::after{
   .job-list-item__heading,
   .job-contact__row,
   .catalog-page ul.products,
-  .woocommerce-products-header {
+  .woocommerce-products-header,
+  .clubs-form {
     flex-direction: column;
   }
   .job-list .pagination-block {
@@ -15086,6 +15097,16 @@ ul#menu-header-left-menu li.menu-item-has-children:hover > a::after{
 #acf-field_5eed9e2bd5716{
   height: auto;
 }
+
+.clubs-form{
+  display:flex;
+  justify-content:space-between;
+}
+
+.clubs-form p{
+  margin: 0 24px 0 0 ;
+  color: #a9a9b9;
+} 
 
 /*==========  Desktop First  ==========*/
 @media (max-width: 1199.98px) {

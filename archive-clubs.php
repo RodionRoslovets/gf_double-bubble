@@ -16,9 +16,39 @@ get_header('secondary');
                     </nav>
                 </div>
                 <div class="row">
-                    <div class="block-title-page">
+                    <div class="block-title-page clubs-title">
                         <h1 class="main-title-page">Clubs</h1>
+                        <form action="" class="clubs-form" method="POST">
+                            <p>filter: </p>
+                            <select class="filter-grid-clubs__district" name="grid-district">
+                                    <option value="">-District-</option>
+                                    <?php
+                                        $districts_terms = get_terms( [
+                                            'taxonomy' => 'clubs_district',
+                                            'hide_empty' => true,
+                                            'childless'     => false,
+                                        ] );
+                                        foreach($districts_terms as $term){
+                                            echo "<option value='{$term->name}'>{$term->name}</option>";
+                                        }
+                                    ?>
+                            </select>
+                            <select class="filter-grid-clubs__day-night" name="grid-day-night">
+                                    <option value="">-Day/Night-</option>
+                                    <?php
+                                        $districts_terms = get_terms( [
+                                            'taxonomy' => 'clubs_day_night',
+                                            'hide_empty' => true,
+                                            'childless'     => false,
+                                        ] );
+                                        foreach($districts_terms as $term){
+                                            echo "<option value='{$term->name}'>{$term->name}</option>";
+                                        }
+                                    ?>
+                            </select>
+                            </form>
                         <div class="filter-grid" style="display: none;">
+                        
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/sort.svg" alt="">
                             <p>sorting:</p>
                             <ul>
