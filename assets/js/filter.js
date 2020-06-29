@@ -853,7 +853,7 @@ jQuery(function ($) {
     let mainBoxRentTransport = $('#response-rent-transport');
 
     // Отправка ajax запроса при клике по ссылке пагинации
-    mainBoxRentTransport.on('click', '.pagination .nav-links a', function (e) {
+    mainBoxRentTransport.on('click', '.pagination-right .nav-links a', function (e) {
         e.preventDefault();
 
         let linkPageRentTransport = $(this).attr('href');
@@ -948,13 +948,15 @@ jQuery(function ($) {
         dataArray.push(
             { name: "action", value: 'rent_transport' },
             { name: "link", value: linkPageRentTransport, },
-            { name: "min_price", value: min_price },
-            { name: "max_price", value: max_price },
-            { name: "count_page", value: count_page },
-            { name: "grid-price", value: select },
-            { name: "average_rating", value: stars_value },
+            // { name: "min_price", value: min_price },
+            // { name: "max_price", value: max_price },
+            // { name: "count_page", value: count_page },
+            // { name: "grid-price", value: select },
+            // { name: "average_rating", value: stars_value },
             ...dataTerms
         );
+
+        console.log(dataArray)
         $.ajax({
             url: ajax_pagination_rent_transport.ajaxurl,
             data: dataArray,

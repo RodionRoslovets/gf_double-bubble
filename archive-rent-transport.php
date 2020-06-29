@@ -255,7 +255,7 @@ get_header('secondary');
 
                 </div>
                 <div class="col-lg-9">
-                    <!--                        <div id="response-rent-transport"></div>-->
+                                           <div id="response-rent-transport">
                     <?php if (have_posts()) :
 
                         while (have_posts()) : the_post();
@@ -370,16 +370,16 @@ get_header('secondary');
                     endif;
 
                     ?>
-                </div>
+                
 
 
-            </div>
+            
             <?php
             //                <div class="row">
             //
             //
             //
-            //                    <div class="pagination-block">
+                            //    <div class="pagination-block">
             //<!--                        <div class="pagination-left">-->
             //<!--                            <p>Show</p>-->
             //<!--                            <span>12</span>-->
@@ -405,10 +405,13 @@ get_header('secondary');
                                        ?>
             
                                    </div>
+                                   </div>
 
            
 
         </div>
+        </div>
+    </div>
 
     </div>
     </div>
