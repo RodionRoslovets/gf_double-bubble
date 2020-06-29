@@ -56,7 +56,7 @@ the_post();
                         
                         <?php if($event['club_link']):?>
                             <div class="to-club-event">
-                                <p><a href="<?php echo esc_html( $event['club_link'] ); ?>">To club page</a></p>
+                                <p><a href="<?php echo esc_html( $event['club_link'] ); ?>">To event venue</a></p>
                             </div>
                         <?php endif; ?>
 
@@ -125,7 +125,7 @@ the_post();
 
                         <?php if($event['club_link']):?>
                             <div class="to-club-event">
-                                <p><a href="<?php echo esc_html( $event['club_link'] ); ?>">To club page</a></p>
+                                <p><a href="<?php echo esc_html( $event['club_link'] ); ?>">To event venue</a></p>
                             </div>
                         <?php endif; ?>
 
