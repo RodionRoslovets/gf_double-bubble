@@ -4,7 +4,7 @@ get_header('secondary');
 
 ?>
 
-<main class="main-content">
+<main class="main-content rent-transport">
     <div class="wrapper">
         <div class="container-fluid">
             <div class="row">
@@ -67,17 +67,17 @@ get_header('secondary');
                             <button class="search-date__map-btn">View on the map</button>
                         </form>
                     </div>
-
-                    <div class="search-price">
+                    <?php $res = gf_get_min_max_by_type('rent-transport', 'rent_transport_data_price');?>
+                    <div class="search-price search-price__transport">
                         <form action="" method="POST">
                             <h5>Price</h5>
                             <div class="search-price__price">
                                 <div class="search-price__price-in">
-                                    <span><input type="text" id="amount" name="min_price" value="0" readonly />
+                                    <span><input type="text" id="amount" name="min_price" value="<?php echo $res["min_price"] ?>" readonly />
                                     </span><span>$</span>
                                 </div>
                                 <div class="search-price__price-out">
-                                    <span><input type="text" id="amount2" name="max_price" value="100" readonly />
+                                    <span><input type="text" id="amount2" name="max_price" value="<?php echo $res["max_price"] ?>" readonly />
                                     </span><span>$</span>
                                 </div>
                             </div>

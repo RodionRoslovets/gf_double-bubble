@@ -222,6 +222,7 @@ require get_template_directory() . '/inc/filter-events.php';
 require get_template_directory() . '/inc/filter-restaurants.php';
 require get_template_directory() . '/inc/filter-clubs.php';
 require get_template_directory() . '/inc/filter-tours.php';
+require get_template_directory() . '/inc/filter-rent-transport.php';
 require get_template_directory() . '/inc/news-functions.php';
 require get_template_directory() . '/inc/rent-transport-functions.php';
 require get_template_directory() . '/inc/job-functions.php';

@@ -978,7 +978,7 @@ jQuery(function ($) {
 
 
     $("#slider-range-rent-transport").slider({
-        change: function (event, ui) {
+        stop: function (event, ui) {
             // let linkP = location.href;
             let filter = $(this);
             let dataArray = filter.serializeArray();
