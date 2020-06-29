@@ -54,6 +54,19 @@ function true_filter_restaurants(){
         );
     }
 
+    if($_POST['check_item']){
+        $args['tax_query'][] = [
+            'relation' => 'AND',
+            [
+                'taxonomy' => 'restaurant_check',
+                'field' => 'name',
+                'terms'    => $_POST['check_item'],
+                'operator' => 'IN'
+            ],
+        ];
+    }
+
+
 
 
     query_posts( $args );

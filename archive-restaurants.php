@@ -64,6 +64,24 @@ get_header('secondary');
                                         <?php $i++ ?>
                                     <?php endforeach; ?>
                                 </ul>
+                                <h5 class="search-reviews__heading slideup-parent">Check</h5>
+                                <?php $terms = get_terms( [
+                                    'taxonomy' => 'restaurant_check',
+                                    'hide_empty' => false,
+                                    'get'           => 'all',
+                                    'childless'     => true,
+                                ] ); ?>
+                                <ul class="search-reviews__list slideup-child">
+                                    <?php $i = 1; ?>
+                                    <?php foreach ($terms as $k => $term): ?>
+                                        <li><label>
+                                                <?php echo $term->name ?>
+                                                <input type="checkbox" name="check_item" value="<?php echo $term->slug ?>$">
+                                                <span class="checkmark"></span>
+                                            </label></li>
+                                        <?php $i++ ?>
+                                    <?php endforeach; ?>
+                                </ul>
                             </form>
                         </div>
 

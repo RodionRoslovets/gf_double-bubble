@@ -468,6 +468,7 @@ jQuery(function ($) {
             { name: "grid-price", value: select },
             { name: "count_page", value: count_page },
         );
+        console.log(dataTermsRestaurants);
         $.ajax({
             url: ajax_pagination_restaurants.ajaxurl,
             data: dataTermsRestaurants,
@@ -500,6 +501,10 @@ jQuery(function ($) {
         let val = $("#slider-range").slider('values');
         let min_price = val[0];
         let max_price = val[1];
+        let checkArr = [...document.querySelectorAll('input[name="check_item"]')]
+            .filter(item=>item.checked)
+            .map(item=>{return {name:'check_item', value:item.value}})
+        
         dataArray.push(
             { name: "action", value: 'restaurants' },
             { name: "link", value: linkPageRestaurants, },
@@ -508,6 +513,7 @@ jQuery(function ($) {
             { name: "count_page", value: count_page },
             { name: "grid-price", value: select },
             ...dataTermsRestaurants,
+            ...checkArr,
         );
         // console.log(dataArray);
         $.ajax({
@@ -540,12 +546,17 @@ jQuery(function ($) {
         // let val = $( "#slider-range" ).slider('values');
         // let min_price = val[0];
         // let max_price = val[1];
+
+        let checkArr = [...document.querySelectorAll('input[name="check_item"]')]
+            .filter(item=>item.checked)
+            .map(item=>{return {name:'check_item', value:item.value}})
         dataArray.push(
             { name: "action", value: 'restaurants' },
             // {name: "link", value: linkP,},
             // {name: "min_price", value: min_price},
             // {name: "max_price", value: max_price},
             // {name: "grid-price", value: select},
+            ...checkArr
         );
         // console.log(dataArray);
         $.ajax({
