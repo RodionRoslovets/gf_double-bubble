@@ -507,7 +507,7 @@ get_header(); ?>
         <div class="block-title">
             <h2>Rent transport</h2>
             <hr />
-            <a href="#">all transport</a>
+            <a href="/rent-transport">all transport</a>
         </div>
     </div>
 

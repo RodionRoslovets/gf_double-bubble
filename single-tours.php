@@ -92,7 +92,7 @@ while ( have_posts() ) :
 
 
                         <div class="row content-club desktop-visible">
-                            <h2 class="titles-page">About villa</h2>
+                            <h2 class="titles-page">About tour</h2>
                             <?php the_content(); ?>
                         </div>
 
@@ -144,8 +144,8 @@ while ( have_posts() ) :
 
 
                 <div class="row content-club mobile-visible">
-                    <h2 class="titles-page">About villa</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Nulla consequat massa quis enim.</p>
+                    <h2 class="titles-page">About tour</h2>
+                    <p><?php the_content(); ?></p>
                 </div>
 
 

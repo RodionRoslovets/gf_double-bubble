@@ -198,7 +198,7 @@ while ( have_posts() ) :
                                     } ?>
                             </p>
 
-                            <p><strong>Working hours: </strong><?php echo esc_html( $fields['working_hours'] ); ?></p>.
+                            <p><strong>Working hours: </strong><?php echo esc_html( $fields['working_hours'] ); ?></p>
                             <?php $menu = get_field('club_menu');
                             if($menu):?>
                             <div class="restaurant-top-page__info-menu desktop-visible">
