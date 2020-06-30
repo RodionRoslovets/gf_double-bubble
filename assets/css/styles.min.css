@@ -14882,6 +14882,11 @@ ul#menu-header-left-menu li.menu-item-has-children:hover > a::after{
   color: #a9a9b9;
 }
 
+.user-data{
+  display:flex;
+  justify-content: space-between;
+}
+
 @media (max-width: 1200px) {
   .show-child-comment {
     width: 20%;

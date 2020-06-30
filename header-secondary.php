@@ -73,7 +73,7 @@
         <div class="header-right">
             <ul class="navbar-top nav-top-right">
                 <li>
-                    <a href="/profile">
+                    <a href="/favorites">
                         <?php echo do_shortcode('[user_favorite_count]') ?>
                         <!-- <img src="<?php //echo get_template_directory_uri(); 
                                         ?>/assets/img/icons/heart-white.svg" alt=""> -->

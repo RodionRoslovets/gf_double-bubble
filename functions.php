@@ -51,6 +51,8 @@ if ( ! function_exists( 'double_setup' ) ) :
             'footer_menu_2' => esc_html__('Footer menu 2', 'double'),
         ) );
 
+        register_nav_menu('profile_menu', 'Profile Menu');
+
         /*
          * Switch default core markup for search form, comment form, and comments
          * to output valid HTML5.
