@@ -24,7 +24,33 @@ add_action( 'comment_post', 'comm_rating_save_comment_rating' );
 function comm_rating_save_comment_rating( $comment_id ) {
     if ( ( isset( $_POST['rating'] ) ) && ( '' !== $_POST['rating'] ) )
         $rating = intval( $_POST['rating'] );
+
     add_comment_meta( $comment_id, 'rating', $rating );
+
+    //Пересчет среднего рейтинга и запись в мета-данные поста
+    $comment = get_comment($comment_id);
+    
+    $all_comments_for_post = get_comments(array('post_id' => $comment->comment_post_ID));
+
+    $ratings = 0;
+    $count = 0;
+
+    foreach($all_comments_for_post as $post_comment){
+        $comment_rating = get_comment_meta($post_comment->comment_ID, 'rating');
+
+        if($comment_rating){
+            $ratings += $comment_rating[0];
+            $count += 1;
+        }
+    }
+
+    $average_rating = 0;
+
+    if($ratings > 0 && $count > 0){
+        $average_rating = round( $ratings / $count , 1);
+    }
+
+    update_post_meta($comment->comment_post_ID, 'average_rating', $average_rating);
 }
 
 //ОБЯЗАТЕЛЬНОСТЬ РЕЙТИНГА
