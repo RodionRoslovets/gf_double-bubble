@@ -137,6 +137,19 @@ function true_filter_tours(){
 //        );
 //    }
 
+    if($_POST['average-rating']){
+        $args['meta_query'] = array(
+            'relation' => 'AND'
+        );
+
+        $args['meta_query'][] = array(
+            'key' => 'average_rating',
+            'value' => $_POST['average-rating'],
+            'compare' => '>=',
+            'type' => 'NUMERIC',
+        );
+    }
+
 
 
 

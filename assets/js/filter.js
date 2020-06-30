@@ -780,6 +780,7 @@ jQuery(function ($) {
         // let val = $( "#slider-range" ).slider('values');
         // let min_price = val[0];
         // let max_price = val[1];
+        let selectedRating = document.querySelectorAll('.tours-form .filter-grid-tours__average-rating')[0].value;
         dataArray.push(
             { name: "action", value: 'tours' },
             { name: "link", value: linkPageTours, },
@@ -787,6 +788,7 @@ jQuery(function ($) {
             // {name: "max_price", value: max_price},
             { name: "count_page", value: count_page },
             { name: "grid-price", value: select },
+            {name:'average-rating', value:selectedRating},
         );
         // console.log(dataArray);
         $.ajax({
@@ -819,12 +821,14 @@ jQuery(function ($) {
         // let val = $( "#slider-range" ).slider('values');
         // let min_price = val[0];
         // let max_price = val[1];
+        let selectedRating = document.querySelectorAll('.tours-form .filter-grid-tours__average-rating')[0].value;
         dataArray.push(
             { name: "action", value: 'tours' },
             // {name: "link", value: linkP,},
             // {name: "min_price", value: min_price},
             // {name: "max_price", value: max_price},
             // {name: "grid-price", value: select},
+            {name:'average-rating', value:selectedRating},
         );
         // console.log(dataArray);
         $.ajax({
@@ -845,7 +849,43 @@ jQuery(function ($) {
         return false;
     });
 
+    $('form.tours-form').on('change', function () {
+        // console.log(this);
+        let date_value = '';
+        let linkP = location.href;
+        let filter = $(this);
+        let dataArray = filter.serializeArray();
+        // let val = $( "#slider-range" ).slider('values');
+        // let min_price = val[0];
+        // let max_price = val[1];
+        dataArray.push(
+            { name: "action", value: 'tours' },
+            // {name: "link", value: linkP,},
+            // {name: "min_price", value: min_price},
+            // {name: "max_price", value: max_price},
+            { name: "count_page", value: count_page },
+            // {name: "grid-date", value: date_value},
+        );
+        console.log(dataArray);
+        $.ajax({
+            url: ajax_pagination_events.ajaxurl,
+            data: dataArray,
+            type: 'POST',
+            beforeSend: function (xhr) {
+                mainBoxTours.animate({ opacity: 0.7 }, 300);
+            },
+            success: function (posts) {
+                if (posts) {
 
+                    mainBoxTours.html(posts); // insert new posts
+                }
+
+                mainBoxTours.animate({ opacity: 1 }, 300);
+
+            }
+
+        });
+    });
 
 
 

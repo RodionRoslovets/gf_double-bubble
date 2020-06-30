@@ -27,6 +27,18 @@ get_header('secondary');
 <!--                                <li>around the area</li>-->
 <!--                            </ul>-->
 <!--                        </div>-->
+                        <form class="tours-form" name="average-rating">
+                            <p>filter: </p>
+                            <select class="filter-grid-tours__average-rating" name="average-rating">
+                                    <option value="">-Average rating-</option>
+                                    <option value="5">Excellent</option>
+                                    <option value="4">Good</option>
+                                    <option value="3">Average</option>
+                                    <option value="2">Poor</option>
+                                    <option value="1">Terrible</option>
+                                    
+                            </select>
+                        </form>
                     </div>
                 </div>
 

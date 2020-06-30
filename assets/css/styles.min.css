@@ -14847,7 +14847,8 @@ ul#menu-header-left-menu li.menu-item-has-children:hover > a::after{
 .filter-grid-events__day-night,
 .filter-grid-clubs__district,
 .filter-grid-clubs__day-night,
-.filter-grid-clubs__average-rating{
+.filter-grid-clubs__average-rating,
+.filter-grid-tours__average-rating{
   border:none;
   appearance: none;
   -webkit-appearance: none;
@@ -14856,7 +14857,8 @@ ul#menu-header-left-menu li.menu-item-has-children:hover > a::after{
 
 .filter-grid-clubs__district,
 .filter-grid-clubs__day-night,
-.filter-grid-clubs__average-rating{
+.filter-grid-clubs__average-rating,
+.filter-grid-tours__average-rating{
   cursor: pointer;
   margin-right: 14px;
   color: #0085ff;
@@ -14869,6 +14871,15 @@ ul#menu-header-left-menu li.menu-item-has-children:hover > a::after{
 
 .to-club-event{
   padding:24px 0 0 0;
+}
+
+.tours-form{
+  display:flex;
+}
+
+.tours-form p{
+  margin: 0 24px 0 0;
+  color: #a9a9b9;
 }
 
 @media (max-width: 1200px) {
