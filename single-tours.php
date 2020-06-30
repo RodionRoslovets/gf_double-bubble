@@ -58,6 +58,20 @@ while ( have_posts() ) :
 <!--                                --><?php //if ( function_exists( 'wfp_button' ) ) wfp_button(); ?>
                                 <?php echo do_shortcode('[favorite_button]') ?>
                             </div>
+                            <div class="day-tour-panorama">
+                                <?php if(get_field('tours_day_tour')):?>
+                                    <a href="#" class="club-panorama desktop-visible">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/play.svg" alt="">
+                                        <p><?php echo esc_html__('Day Tour', 'double'); ?></p>
+                                    </a>
+                                <?php endif; ?>
+                                <?php if(get_field('tours_night_tour')):?>
+                                    <a href="#" class="club-panorama2 desktop-visible">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/play.svg" alt="">
+                                        <p><?php echo esc_html__('Night Tour', 'double'); ?></p>
+                                    </a>
+                                <?php endif; ?>
+                            </div>
                         </div>
 
                     </div>
@@ -259,35 +273,63 @@ while ( have_posts() ) :
         </div>
     </main>
 
+    <?php if(get_field('tours_day_tour')):?>
     <section class="panorama-slider">
         <div class="container">
             <div class="row">
+                <?php the_field('tours_day_tour'); ?>
+            </div>
+        </div>
+        <a class="close-panorama-slider" href="#">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/cross-modal.svg" alt="">
+        </a>
+
+    </section>
+    <?php endif; ?>
+    <?php if(get_field('tours_night_tour')):?>
+
+    <section class="panorama-slider2">
+        <div class="container">
+            <div class="row">
+                <?php the_field('tours_night_tour'); ?>
+            </div>
+        </div>
+        <a class="close-panorama-slider2" href="#">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/cross-modal.svg" alt="">
+        </a>
+
+    </section>
+    <?php endif; ?>
+
+    <!-- <section class="panorama-slider">
+        <div class="container">
+            <div class="row">
                 <?php
-                $gallery = get_field('panorama_gallery');
+                //$gallery = get_field('panorama_gallery');
                 ?>
-                <?php if( $gallery ): ?>
-                <?php $count = 1 ?>
+                <?php //if( $gallery ): ?>
+                <?php //$count = 1 ?>
                     <ul id="lightSlider">
-                        <?php foreach( $gallery as $image ): ?>
-                            <li class="lightSlider-item" data-thumb="<?php echo esc_url($image['url']); ?>">
-                                <div id="panorama<?php echo $count; ?>" class="panorama-item"></div>
+                        <?php //foreach( $gallery as $image ): ?>
+                            <li class="lightSlider-item" data-thumb="<?php //echo esc_url($image['url']); ?>">
+                                <div id="panorama<?php //echo $count; ?>" class="panorama-item"></div>
                                 <script>
-                                    pannellum.viewer('panorama<?php echo $count; ?>', {
+                                    pannellum.viewer('panorama<?php //echo $count; ?>', //{
                                         "type": "equirectangular",
-                                        "panorama": "<?php echo esc_url($image['url']); ?>",
+                                        "panorama": "<?php //echo esc_url($image['url']); ?>",
                                         "autoLoad": true,
                                         "scale": false
-                                    });
+                                    //});
                                 </script>
                             </li>
-                            <?php $count++ ?>
-                        <?php endforeach; ?>
+                            <?php //$count++ ?>
+                        <?php //endforeach; ?>
                     </ul>
-                <?php endif; ?>
+                <?php //endif; ?>
             </div>
         </div>
 
-    </section>
+    </section> -->
 
 <?php
 
