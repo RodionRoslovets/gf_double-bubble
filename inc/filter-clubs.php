@@ -86,6 +86,19 @@ function true_filter_clubs(){
         ];
     }
 
+    if($_POST['average-rating']){
+        $args['meta_query'] = array(
+            'relation' => 'AND'
+        );
+
+        $args['meta_query'][] = array(
+            'key' => 'average_rating',
+            'value' => $_POST['average-rating'],
+            'compare' => '>=',
+            'type' => 'NUMERIC',
+        );
+    }
+
 
     // для таксономий
 //    if( isset( $_POST['categoryfilter'] ))

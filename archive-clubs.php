@@ -46,6 +46,15 @@ get_header('secondary');
                                         }
                                     ?>
                             </select>
+                            <select class="filter-grid-clubs__average-rating" name="average-rating">
+                                    <option value="">-Average rating-</option>
+                                    <option value="5">Excellent</option>
+                                    <option value="4">Good</option>
+                                    <option value="3">Average</option>
+                                    <option value="2">Poor</option>
+                                    <option value="1">Terrible</option>
+                                    
+                            </select>
                             </form>
                         <div class="filter-grid" style="display: none;">
                         

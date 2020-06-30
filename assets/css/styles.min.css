@@ -14846,7 +14846,8 @@ ul#menu-header-left-menu li.menu-item-has-children:hover > a::after{
 .filter-grid-events__district,
 .filter-grid-events__day-night,
 .filter-grid-clubs__district,
-.filter-grid-clubs__day-night{
+.filter-grid-clubs__day-night,
+.filter-grid-clubs__average-rating{
   border:none;
   appearance: none;
   -webkit-appearance: none;
@@ -14854,7 +14855,8 @@ ul#menu-header-left-menu li.menu-item-has-children:hover > a::after{
 }
 
 .filter-grid-clubs__district,
-.filter-grid-clubs__day-night{
+.filter-grid-clubs__day-night,
+.filter-grid-clubs__average-rating{
   cursor: pointer;
   margin-right: 14px;
   color: #0085ff;

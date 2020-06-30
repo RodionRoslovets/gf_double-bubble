@@ -620,6 +620,7 @@ jQuery(function ($) {
         let dataArray = filter.serializeArray(),
         selectedDistrict = document.querySelectorAll('.clubs-form .filter-grid-clubs__district')[0].value,
         selectedDayNight = document.querySelectorAll('.clubs-form .filter-grid-clubs__day-night')[0].value;
+        selectedRating = document.querySelectorAll('.clubs-form .filter-grid-clubs__average-rating')[0].value;
         // let val = $( "#slider-range" ).slider('values');
         // let min_price = val[0];
         // let max_price = val[1];
@@ -632,6 +633,7 @@ jQuery(function ($) {
             { name: "grid-price", value: select },
             {name:'grid-district', value:selectedDistrict},
             {name:'grid-day-night', value:selectedDayNight},
+            {name:'average-rating', value:selectedRating},
         );
         // console.log(dataArray);
         $.ajax({
@@ -663,6 +665,7 @@ jQuery(function ($) {
         let dataArray = filter.serializeArray(),
         selectedDistrict = document.querySelectorAll('.clubs-form .filter-grid-clubs__district')[0].value,
         selectedDayNight = document.querySelectorAll('.clubs-form .filter-grid-clubs__day-night')[0].value;
+        selectedRating = document.querySelectorAll('.clubs-form .filter-grid-clubs__average-rating')[0].value;
         // let val = $( "#slider-range" ).slider('values');
         // let min_price = val[0];
         // let max_price = val[1];
@@ -670,6 +673,7 @@ jQuery(function ($) {
             { name: "action", value: 'clubs' },
             {name:'grid-district', value:selectedDistrict},
             {name:'grid-day-night', value:selectedDayNight},
+            {name:'average-rating', value:selectedRating},
             // {name: "link", value: linkP,},
             // {name: "min_price", value: min_price},
             // {name: "max_price", value: max_price},
@@ -710,7 +714,6 @@ jQuery(function ($) {
             // {name: "max_price", value: max_price},
             { name: "count_page", value: count_page },
             // {name: "grid-date", value: date_value},
-            // {name: "meta_value_num", value: 'meta_value_num'},
         );
         console.log(dataArray);
         $.ajax({
@@ -719,7 +722,6 @@ jQuery(function ($) {
             type: 'POST',
             beforeSend: function (xhr) {
                 mainBoxClubs.animate({ opacity: 0.7 }, 300);
-                console.log(1)
             },
             success: function (posts) {
                 if (posts) {
