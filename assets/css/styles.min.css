@@ -14919,6 +14919,10 @@ ul#menu-header-left-menu li.menu-item-has-children:hover > a::after{
   text-decoration:none;
 }
 
+.log-in-form{
+ margin-top: 48px;
+}
+
 .log-in-form p{
   display:flex;
   justify-content: space-between;
@@ -15251,6 +15255,10 @@ ul#menu-header-left-menu li.menu-item-has-children:hover > a::after{
   margin: 0 24px 0 0 ;
   color: #a9a9b9;
 } 
+
+.favorites-posts{
+  margin-top: 24px;
+}
 
 /*==========  Desktop First  ==========*/
 @media (max-width: 1199.98px) {
