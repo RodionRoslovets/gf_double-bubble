@@ -14885,6 +14885,106 @@ ul#menu-header-left-menu li.menu-item-has-children:hover > a::after{
 .user-data{
   display:flex;
   justify-content: space-between;
+  margin-top: 48px;
+}
+
+.user-data .user-avatar img{
+  width:144px;
+  height:144px;
+}
+
+.user-data .user-name h2{
+  font-family: 'Geometria', sans-serif;
+  font-weight:bold;
+  font-size:24px;
+  line-height: 30px;
+}
+
+.user-data .user-contacts .user-contacts__email,
+.user-data .user-contacts .user-contacts__phone,
+.user-address .user-address__city,
+.user-address .user-address__address{
+  display:flex;
+  margin-bottom: 16px;
+}
+
+.user-data .user-contacts__icon{
+  width:20px;
+  text-align: center;
+  margin-right:20px;
+}
+
+.user-data .user-contacts a{
+  color: #1F1F24;
+  text-decoration:none;
+}
+
+.log-in-form p{
+  display:flex;
+  justify-content: space-between;
+}
+
+.log-in-form p input[type="text"],
+.log-in-form p input[type="password"]{
+  max-width:250px;
+  width: 100%;
+  border: 1px solid #C8C8DB;
+  padding:16px;
+  max-height:48px;
+}
+
+.log-in-form p input[type="submit"]{
+  background:#EB5757;
+  padding:11px 64px;
+  color:#fff;
+  border:none;
+  max-height:48px;
+}
+
+.profile-heading{
+  font-family: 'Geometria', sans-serif;
+  font-weight:900;
+  font-size:48px;
+}
+
+.menu-and-logout{
+  display:flex;
+  justify-content:space-between;
+  border-bottom:1px solid #E3E3EC;
+  margin-top: 16px;
+}
+.profile-menu ul{
+  display: flex;
+  margin: 0;
+}
+
+.profile-menu ul li{
+  list-style: none;
+  position: relative;
+  padding:0 0 22px 0;
+}
+
+.profile-menu ul li.current-menu-item a{
+  color: #1F1F24;
+}
+
+.profile-menu ul li.current-menu-item:after{
+  content:'';
+  width:100%;
+  height:3px;
+  background: #EB5757;
+  position:absolute;
+  bottom:0;
+  left:0;
+}
+
+.profile-menu ul li:not(:last-child){
+  margin-right:48px;
+}
+
+.mobile-logout{
+  display:none;
+  text-align: right;
 }
 
 @media (max-width: 1200px) {
@@ -14905,8 +15005,13 @@ ul#menu-header-left-menu li.menu-item-has-children:hover > a::after{
   .job-list-item__data-map,
   .product-top-page .villa-top-page__info .product-description,
   .cart__price_mobile,
-  .cart__delete_mobile {
+  .cart__delete_mobile,
+  .mobile-logout {
     display: block;
+  }
+
+  .menu-and-logout .desctop-logout{
+    display:none;
   }
 
   .rent-transport-item__info_col,
@@ -14928,9 +15033,30 @@ ul#menu-header-left-menu li.menu-item-has-children:hover > a::after{
   .job-contact__row,
   .catalog-page ul.products,
   .woocommerce-products-header,
-  .clubs-form {
+  .clubs-form, 
+  .user-data{
     flex-direction: column;
   }
+
+  .user-data{
+    align-items: center;
+  }
+
+  .user-data .user-name h2{
+    text-align: center;
+  }
+
+  .user-data .user-avatar,
+  .user-data .user-name{
+    margin-bottom: 30px;
+  }
+
+  .user-data .user-contacts,
+  .user-data .user-address{
+    align-self: flex-start;
+    padding-left: 32px;
+  }
+
   .job-list .pagination-block {
     justify-content: center;
   }
