@@ -15048,6 +15048,12 @@ ul#menu-header-left-menu li.menu-item-has-children:hover > a::after{
     flex-direction: column;
   }
 
+  .header-cart-count,
+  .simplefavorites-user-count{
+    top:2px!important;
+    right:-10px!important;
+  }
+
   .clubs-form{
     overflow: auto;
     width: 100%;
