@@ -73,6 +73,7 @@ get_header('secondary');
                     <?php if (is_user_logged_in()) : ?>
                         <?php
                         $favorites = get_user_favorites();
+                        if($favorites):
                         ?>
 
                         <div class="row favorites-posts">
@@ -97,7 +98,7 @@ get_header('secondary');
                                 <div class="col-lg-4 col-sm-6 d-flex justify-content-center">
                                     <div class="restaurants-preview__item">
                                         <a href="<?php the_permalink(); ?>" class="restaurants-preview__item_image">
-                                            <?php the_post_thumbnail(); ?>
+                                            <?php the_post_thumbnail(array(270,175)); ?>
                                         </a>
 
                                         <div class="restaurants-preview__item_content">
@@ -123,6 +124,7 @@ get_header('secondary');
 
 
                         <?php echo do_shortcode('[clear_favorites_button]'); ?>
+                        <?php endif;?>
                     <?php else : ?>
                         <div class="log-in-form col-md-6">
                             <?php
