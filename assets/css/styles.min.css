@@ -766,6 +766,12 @@ pre code {
   margin-left: auto;
 }
 
+.simplefavorite-button.active {
+    opacity: .7;
+    display: flex;
+    align-items: center;
+}
+
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
@@ -15037,10 +15043,16 @@ ul#menu-header-left-menu li.menu-item-has-children:hover > a::after{
   .job-contact__row,
   .catalog-page ul.products,
   .woocommerce-products-header,
-  .clubs-form, 
+  /* .clubs-form,  */
   .user-data{
     flex-direction: column;
   }
+
+  .clubs-form{
+    overflow: auto;
+    width: 100%;
+  }
+
 
   .user-data{
     align-items: center;
@@ -16087,6 +16099,15 @@ ul#menu-header-left-menu li.menu-item-has-children:hover > a::after{
   .not-found button {
     margin-top: 0;
   }
+
+  .filter-grid-restaurants{
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .filter-grid-restaurants img{
+    display:block;
+  }
 }
 
 /*==========  Mobile First  ==========*/
@@ -16102,4 +16123,14 @@ ul#menu-header-left-menu li.menu-item-has-children:hover > a::after{
 .menu-slider .menu-foto-slider .fotorama__stage__shaft,
 .menu-slider .menu-foto-slider .fotorama__nav__frame{
   border:none;
+}
+
+.woocommerce-info,
+.woocommerce-message{
+  background:transparent!important;
+}
+
+.rent-car-slider-row .simplefavorite-button.active{
+  display: block;
+  width: 22px;
 }

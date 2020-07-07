@@ -21,8 +21,9 @@ get_header('secondary');
                         <h1 class="main-title-page">Restaurants</h1>
                         <div class="filter-grid-restaurants">
                             <img class="mobile-filter" src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/sort.svg" alt="">
-                            <p>sorting:</p>
+                            
                             <form action="" method="POST">
+                            <p>sorting:</p>
                                 <!--                                <label class="filter-grid__active">rating-->
                                 <!--                                    <input type="checkbox" name="rating_sort">-->
                                 <!--                                </label>-->
