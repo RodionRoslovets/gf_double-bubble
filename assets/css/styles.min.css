@@ -15260,6 +15260,39 @@ ul#menu-header-left-menu li.menu-item-has-children:hover > a::after{
   margin-top: 24px;
 }
 
+.favorites-posts-menu{
+  padding: 24px 0 0 0;
+  list-style-type: none;
+}
+
+.favorites-posts-menu a{
+  font-family: 'Lato', sans-serif;
+  font-size: 24px;
+  line-height: 50px;
+  color: #0085FF;
+}
+
+.favorites-posts-menu .favorites-posts-menu_active a{
+  font-weight: bold;
+  color: #1F1F24;
+}
+
+.favorites-posts-menu .favorites-posts-menu_active{
+  position:relative;
+}
+
+.favorites-posts-menu .favorites-posts-menu_active:after{
+  content: '';
+  width: 24px;
+  height: 2px;
+  background: #EB5757;
+  position:absolute;
+  left:0;
+  bottom:0;
+}
+
+
+
 /*==========  Desktop First  ==========*/
 @media (max-width: 1199.98px) {
   .nav-top-left {
