@@ -13,7 +13,7 @@ while ( have_posts() ) :
     the_post();
 
 //			get_template_part( 'template-parts/content', get_post_type() );
-?>
+    ?>
 
 
     <main class="main-content">
@@ -39,23 +39,23 @@ while ( have_posts() ) :
                         <div class="clubs-item-rating">
                             <div class="rating-group">
                                 <?php echo do_shortcode('[average_rating]') ?>
-<!--                                <span>9.2</span>-->
-<!--                                <div class="star-block">-->
-<!--                                    <img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-full.svg" alt=""><img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-full.svg" alt=""><img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-full.svg" alt=""><img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-empty.svg" alt=""><img-->
-<!--                                            src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-empty.svg" alt=""></div>-->
-<!--                                <div class="count-rating-review">-->
-<!--                                    <a href="#">56 Reviews</a>-->
-<!--                                </div>-->
+                                <!--                                <span>9.2</span>-->
+                                <!--                                <div class="star-block">-->
+                                <!--                                    <img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-full.svg" alt=""><img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-full.svg" alt=""><img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-full.svg" alt=""><img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-empty.svg" alt=""><img-->
+                                <!--                                            src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-empty.svg" alt=""></div>-->
+                                <!--                                <div class="count-rating-review">-->
+                                <!--                                    <a href="#">56 Reviews</a>-->
+                                <!--                                </div>-->
                             </div>
-<!--                            <ul class="share-socials">-->
-<!--                                <li><a href="#"><span><img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/vk.svg" alt=""></span><span>16</span></a></li>-->
-<!--                                <li><a href="#"><span><img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/fb.svg" alt=""></span><span>16</span></a></li>-->
-<!--                                <li><a href="#"><span><img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/insta.svg" alt=""></span><span>16</span></a></li>-->
-<!--                            </ul>-->
+                            <!--                            <ul class="share-socials">-->
+                            <!--                                <li><a href="#"><span><img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/vk.svg" alt=""></span><span>16</span></a></li>-->
+                            <!--                                <li><a href="#"><span><img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/fb.svg" alt=""></span><span>16</span></a></li>-->
+                            <!--                                <li><a href="#"><span><img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/insta.svg" alt=""></span><span>16</span></a></li>-->
+                            <!--                            </ul>-->
                             <div class="addthis_inline_share_toolbox"></div>
                             <div class="villa-blue-heart mobile-visible">
-<!--                                <p><img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/heart-favorite.svg" alt=""></p>-->
-<!--                                --><?php //if ( function_exists( 'wfp_button' ) ) wfp_button(); ?>
+                                <!--                                <p><img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/heart-favorite.svg" alt=""></p>-->
+                                <!--                                --><?php //if ( function_exists( 'wfp_button' ) ) wfp_button(); ?>
                                 <?php echo do_shortcode('[favorite_button]') ?>
                             </div>
                             <div class="day-tour-panorama">
@@ -116,7 +116,7 @@ while ( have_posts() ) :
                                 </div>
 
                                 <div class="villa-top-page__book-btns">
-                                    <a href="#" class="book-btn bg-btn-red">
+                                    <a href="#" class="book-btn bg-btn-red call-contact-owner">
                                         Book now
                                     </a>
                                 </div>
@@ -132,12 +132,12 @@ while ( have_posts() ) :
                             </div>
 
                             <div class="villa-top-page__info-favorites desktop-visible">
-<!--                                <p><img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/heart-favorite.svg" alt=""></p>-->
-<!--                                <a href="#">To favorites</a>-->
+                                <!--                                <p><img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/heart-favorite.svg" alt=""></p>-->
+                                <!--                                <a href="#">To favorites</a>-->
                                 <?php echo do_shortcode('[favorite_button]') ?>
-<!--                                --><?php //if ( function_exists( 'wfp_button' ) ) wfp_button(); ?>
+                                <!--                                --><?php //if ( function_exists( 'wfp_button' ) ) wfp_button(); ?>
                             </div>
-<!--                            --><?php //do_shortcode('[favorite-post]') ?>
+                            <!--                            --><?php //do_shortcode('[favorite-post]') ?>
                         </div>
                     </div>
                 </div>
@@ -150,124 +150,124 @@ while ( have_posts() ) :
 
 
 
-<!--                <div class="row">-->
-<!--                    <div class="col-md-8 p-0">-->
-<!--                        <h2 class="titles-page title-page-hr">Reviews <span>56</span> <hr /></h2>-->
-<!---->
-<!--                    </div>-->
+                <!--                <div class="row">-->
+                <!--                    <div class="col-md-8 p-0">-->
+                <!--                        <h2 class="titles-page title-page-hr">Reviews <span>56</span> <hr /></h2>-->
+                <!---->
+                <!--                    </div>-->
 
-<!--                    <div class="rating-club">-->
-<!--                        <div class="rating-club-count">-->
-<!--                            <span>9.2</span>-->
-<!--                            <div class="star-block">-->
-<!--                                <img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-full.svg" alt="">-->
-<!--                                <img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-full.svg" alt="">-->
-<!--                                <img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-full.svg" alt="">-->
-<!--                                <img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-empty.svg" alt="">-->
-<!--                                <img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-empty.svg" alt="">-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="rating-club-progress">-->
-<!--                            <div class="club-progress-row">-->
-<!--                                <span class="club-progress-row-title">Кухня</span>-->
-<!--                                <div class="progress">-->
-<!--                                    <div class="progress-bar" role="progressbar" style="width: 49%" aria-valuenow="49" aria-valuemin="0" aria-valuemax="100"></div>-->
-<!--                                </div>-->
-<!--                                <span class="rating-percent">49%</span>-->
-<!--                            </div>-->
-<!--                            <div class="club-progress-row">-->
-<!--                                <span class="club-progress-row-title">Обслуживание</span>-->
-<!--                                <div class="progress">-->
-<!--                                    <div class="progress-bar" role="progressbar" style="width: 87%" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100"></div>-->
-<!--                                </div>-->
-<!--                                <span class="rating-percent">87%</span>-->
-<!--                            </div>-->
-<!--                            <div class="club-progress-row">-->
-<!--                                <span class="club-progress-row-title">Цена/качество</span>-->
-<!--                                <div class="progress">-->
-<!--                                    <div class="progress-bar" role="progressbar" style="width: 74%" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100"></div>-->
-<!--                                </div>-->
-<!--                                <span class="rating-percent">74%</span>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
+                <!--                    <div class="rating-club">-->
+                <!--                        <div class="rating-club-count">-->
+                <!--                            <span>9.2</span>-->
+                <!--                            <div class="star-block">-->
+                <!--                                <img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-full.svg" alt="">-->
+                <!--                                <img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-full.svg" alt="">-->
+                <!--                                <img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-full.svg" alt="">-->
+                <!--                                <img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-empty.svg" alt="">-->
+                <!--                                <img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-empty.svg" alt="">-->
+                <!--                            </div>-->
+                <!--                        </div>-->
+                <!--                        <div class="rating-club-progress">-->
+                <!--                            <div class="club-progress-row">-->
+                <!--                                <span class="club-progress-row-title">Кухня</span>-->
+                <!--                                <div class="progress">-->
+                <!--                                    <div class="progress-bar" role="progressbar" style="width: 49%" aria-valuenow="49" aria-valuemin="0" aria-valuemax="100"></div>-->
+                <!--                                </div>-->
+                <!--                                <span class="rating-percent">49%</span>-->
+                <!--                            </div>-->
+                <!--                            <div class="club-progress-row">-->
+                <!--                                <span class="club-progress-row-title">Обслуживание</span>-->
+                <!--                                <div class="progress">-->
+                <!--                                    <div class="progress-bar" role="progressbar" style="width: 87%" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100"></div>-->
+                <!--                                </div>-->
+                <!--                                <span class="rating-percent">87%</span>-->
+                <!--                            </div>-->
+                <!--                            <div class="club-progress-row">-->
+                <!--                                <span class="club-progress-row-title">Цена/качество</span>-->
+                <!--                                <div class="progress">-->
+                <!--                                    <div class="progress-bar" role="progressbar" style="width: 74%" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100"></div>-->
+                <!--                                </div>-->
+                <!--                                <span class="rating-percent">74%</span>-->
+                <!--                            </div>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
 
-<!--                <div class="row">-->
-<!--                    <div class="block-comments">-->
-<!--                        <div class="item-comment">-->
-<!--                            <div class="item-comment-avatar">-->
-<!--                                <div class="user-comment-avatar"><img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/comments/1.jpg" alt=""></div>-->
-<!--                                <div class="comment-content">-->
-<!--                                    <h5 class="mobile-visible">Alex</h5>-->
-<!--                                    <span class="mobile-visible">11.12.2019</span>-->
-<!--                                </div>-->
-<!--                                <div class="user-rating-avatar"><span>9.5</span></div>-->
-<!--                            </div>-->
-<!--                            <div class="comment-content">-->
-<!--                                <h5 class="desktop-visible">Alex</h5>-->
-<!--                                <span class="desktop-visible">11.12.2019</span>-->
-<!--                                <div class="comment-text">-->
-<!--                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!---->
-<!--                        <div class="item-comment">-->
-<!--                            <div class="item-comment-avatar">-->
-<!--                                <div class="user-comment-avatar"><img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/comments/2.jpg" alt=""></div>-->
-<!--                                <div class="comment-content">-->
-<!--                                    <h5 class="mobile-visible">Segey Ivanov</h5>-->
-<!--                                    <span class="mobile-visible">11.12.2019</span>-->
-<!--                                </div>-->
-<!--                                <div class="user-rating-avatar"><span>9.5</span></div>-->
-<!--                            </div>-->
-<!--                            <div class="comment-content">-->
-<!--                                <h5 class="desktop-visible">Segey Ivanov</h5>-->
-<!--                                <span class="desktop-visible">11.12.2019</span>-->
-<!--                                <div class="comment-text">-->
-<!--                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!---->
-<!--                        <div class="item-comment">-->
-<!--                            <div class="item-comment-avatar">-->
-<!--                                <div class="user-comment-avatar"><img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/comments/3.jpg" alt=""></div>-->
-<!--                                <div class="comment-content">-->
-<!--                                    <h5 class="mobile-visible">Julia</h5>-->
-<!--                                    <span class="mobile-visible">11.12.2019</span>-->
-<!--                                </div>-->
-<!--                                <div class="user-rating-avatar"><span>9.5</span></div>-->
-<!--                            </div>-->
-<!--                            <div class="comment-content">-->
-<!--                                <h5 class="desktop-visible">Julia</h5>-->
-<!--                                <span class="desktop-visible">11.12.2019</span>-->
-<!--                                <div class="comment-text">-->
-<!--                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!---->
-<!---->
-<!--                        <div class="more-reviews">-->
-<!--                            <a href="#">More rewiews</a>-->
-<!--                        </div>-->
-<!---->
-<!---->
-<!--                    </div>-->
-<!--                </div>-->
+                <!--                <div class="row">-->
+                <!--                    <div class="block-comments">-->
+                <!--                        <div class="item-comment">-->
+                <!--                            <div class="item-comment-avatar">-->
+                <!--                                <div class="user-comment-avatar"><img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/comments/1.jpg" alt=""></div>-->
+                <!--                                <div class="comment-content">-->
+                <!--                                    <h5 class="mobile-visible">Alex</h5>-->
+                <!--                                    <span class="mobile-visible">11.12.2019</span>-->
+                <!--                                </div>-->
+                <!--                                <div class="user-rating-avatar"><span>9.5</span></div>-->
+                <!--                            </div>-->
+                <!--                            <div class="comment-content">-->
+                <!--                                <h5 class="desktop-visible">Alex</h5>-->
+                <!--                                <span class="desktop-visible">11.12.2019</span>-->
+                <!--                                <div class="comment-text">-->
+                <!--                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>-->
+                <!--                                </div>-->
+                <!--                            </div>-->
+                <!--                        </div>-->
+                <!---->
+                <!--                        <div class="item-comment">-->
+                <!--                            <div class="item-comment-avatar">-->
+                <!--                                <div class="user-comment-avatar"><img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/comments/2.jpg" alt=""></div>-->
+                <!--                                <div class="comment-content">-->
+                <!--                                    <h5 class="mobile-visible">Segey Ivanov</h5>-->
+                <!--                                    <span class="mobile-visible">11.12.2019</span>-->
+                <!--                                </div>-->
+                <!--                                <div class="user-rating-avatar"><span>9.5</span></div>-->
+                <!--                            </div>-->
+                <!--                            <div class="comment-content">-->
+                <!--                                <h5 class="desktop-visible">Segey Ivanov</h5>-->
+                <!--                                <span class="desktop-visible">11.12.2019</span>-->
+                <!--                                <div class="comment-text">-->
+                <!--                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>-->
+                <!--                                </div>-->
+                <!--                            </div>-->
+                <!--                        </div>-->
+                <!---->
+                <!--                        <div class="item-comment">-->
+                <!--                            <div class="item-comment-avatar">-->
+                <!--                                <div class="user-comment-avatar"><img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/comments/3.jpg" alt=""></div>-->
+                <!--                                <div class="comment-content">-->
+                <!--                                    <h5 class="mobile-visible">Julia</h5>-->
+                <!--                                    <span class="mobile-visible">11.12.2019</span>-->
+                <!--                                </div>-->
+                <!--                                <div class="user-rating-avatar"><span>9.5</span></div>-->
+                <!--                            </div>-->
+                <!--                            <div class="comment-content">-->
+                <!--                                <h5 class="desktop-visible">Julia</h5>-->
+                <!--                                <span class="desktop-visible">11.12.2019</span>-->
+                <!--                                <div class="comment-text">-->
+                <!--                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>-->
+                <!--                                </div>-->
+                <!--                            </div>-->
+                <!--                        </div>-->
+                <!---->
+                <!---->
+                <!--                        <div class="more-reviews">-->
+                <!--                            <a href="#">More rewiews</a>-->
+                <!--                        </div>-->
+                <!---->
+                <!---->
+                <!--                    </div>-->
+                <!--                </div>-->
 
-<!--                <div class="row">-->
-<!--                    <div class="block-comments">-->
-<!--                    <div class="form-comment">-->
+                <!--                <div class="row">-->
+                <!--                    <div class="block-comments">-->
+                <!--                    <div class="form-comment">-->
 
-                            <?php if (comments_open() || get_comments_number()) {
-                                comments_template();
-                            } ?>
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
+                <?php if (comments_open() || get_comments_number()) {
+                    comments_template();
+                } ?>
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
 
             </div>
         </div>
@@ -285,7 +285,7 @@ while ( have_posts() ) :
         </a>
 
     </section>
-    <?php endif; ?>
+<?php endif; ?>
     <?php if(get_field('tours_night_tour')):?>
 
     <section class="panorama-slider2">
@@ -299,14 +299,57 @@ while ( have_posts() ) :
         </a>
 
     </section>
-    <?php endif; ?>
+<?php endif; ?>
+
+<?php if ( get_field('email_owner_villa') ): ?>
+    <section class="modal-contact-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center">
+                    <div class="form-contact-owner">
+                        <h4>Contact owner</h4>
+                        <form action="" method="post" id="form-contact-owner">
+                            <label for="">
+                                <span class="icon-input">
+                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/user-input.svg" alt="">
+                                </span>
+                                <input name="name" type="text" placeholder="Name" required="required">
+                            </label>
+                            <label for="">
+                                <span class="icon-input">
+                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/mail-input.svg" alt="">
+                                </span>
+                                <input name="email" type="email" placeholder="Email" required="required">
+                            </label>
+                            <label for="">
+                                <span class="icon-input">
+                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/mail-input.svg" alt="">
+                                </span>
+                                <input name="date" type="date" value="<?php echo date('Y-m-d'); ?>" required="required">
+                            </label>
+                            <textarea name="text" placeholder="Your massage"></textarea>
+                            <label>
+                                <input type="checkbox" name="checkbox" value="check" id="agree" required="required" /><p> I have read and agree to the <a href="#">Terms and Conditions and Privacy Policy</a></p>
+                            </label>
+                            <input type="email" name="email_owner" hidden value="<?php the_field('email_owner_villa') ?>">
+                            <input type="submit" value="send">
+                        </form>
+                        <div class="close-contact-owner">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/cross-modal.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<?php endif; ?>
 
     <!-- <section class="panorama-slider">
         <div class="container">
             <div class="row">
                 <?php
-                //$gallery = get_field('panorama_gallery');
-                ?>
+    //$gallery = get_field('panorama_gallery');
+    ?>
                 <?php //if( $gallery ): ?>
                 <?php //$count = 1 ?>
                     <ul id="lightSlider">

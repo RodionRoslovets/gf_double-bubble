@@ -194,6 +194,48 @@ while ( have_posts() ) :
         </div>
 
     </section>
+    <?php if ( get_field('email_owner_villa') ): ?>
+    <section class="modal-contact-owner">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center">
+                    <div class="form-contact-owner">
+                        <h4>Contact owner</h4>
+                        <form action="" method="post" id="form-contact-owner">
+                            <label for="">
+                                <span class="icon-input">
+                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/user-input.svg" alt="">
+                                </span>
+                                <input name="name" type="text" placeholder="Name" required="required">
+                            </label>
+                            <label for="">
+                                <span class="icon-input">
+                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/mail-input.svg" alt="">
+                                </span>
+                                <input name="email" type="email" placeholder="Email" required="required">
+                            </label>
+                            <label for="">
+                                <span class="icon-input">
+                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/mail-input.svg" alt="">
+                                </span>
+                                <input name="date" type="date" value="<?php echo date('Y-m-d'); ?>" required="required">
+                            </label>
+                            <textarea name="text" placeholder="Your massage"></textarea>
+                            <label>
+                                <input type="checkbox" name="checkbox" value="check" id="agree" required="required" /><p> I have read and agree to the <a href="#">Terms and Conditions and Privacy Policy</a></p>
+                            </label>
+                            <input type="email" name="email_owner" hidden value="<?php the_field('email_owner_villa') ?>">
+                            <input type="submit" value="send">
+                        </form>
+                        <div class="close-contact-owner">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/cross-modal.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<?php endif; ?>
 
 <?php
 

@@ -19,7 +19,8 @@ $name = trim($_POST["name"]);
 $phone = trim($_POST["phone"]);
 $text = trim($_POST["text"]);
 $email = trim($_POST["email"]);
-$message = "Name: $name \nPhone: $phone \nText: $text \nEmail: $email";
+$date = trim($_POST["date"]);
+$message = "Name: $name \nPhone: $phone \nText: $text \nEmail: $email \nDate: $date";
 
 $pagetitle = "Новая заявка с сайта \"$sitename\"";
 mail($recepient, $pagetitle, $message, "Content-type: text/plain; charset=\"utf-8\"\n From: $recepient");

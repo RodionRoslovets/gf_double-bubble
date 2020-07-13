@@ -9783,7 +9783,7 @@ input[type="submit"] {
   width: 100%;
   padding: 24px 0;
   max-width: 720px;
-  z-index: 4;
+  z-index: 999;
   background-color: #fff;
   overflow-y: auto;
 }
@@ -13627,6 +13627,7 @@ form.search-form.active-form {
   left: 0;
   right: 0;
   width: 100%;
+  z-index: 999;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;

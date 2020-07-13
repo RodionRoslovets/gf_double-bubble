@@ -326,12 +326,12 @@ while (have_posts()) :
                                 <?php endif; ?>
                                 <div class="villa-top-page__social-list">
                                     <ul><?php if ($villa_data['whatsapp']): ?>
-                                            <li><a href="<?php echo $villa_data['whatsapp'] ?>" target="_blank"><img
+                                            <li><a href="https://api.whatsapp.com/send?phone=<?php echo $villa_data['whatsapp'] ?>" target="_blank"><img
                                                             src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/whatsup.svg"
                                                             alt=""></a></li>
                                         <?php endif; ?>
                                         <?php if ($villa_data['telegram']): ?>
-                                            <li><a href="<?php echo $villa_data['telegram'] ?>" target="_blank"><img
+                                            <li><a href="https://t.me/<?php echo $villa_data['telegram'] ?>" target="_blank"><img
                                                             src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/telegram.svg"
                                                             alt=""></a></li>
                                         <?php endif; ?>
@@ -492,6 +492,12 @@ while (have_posts()) :
                                     <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/mail-input.svg" alt="">
                                 </span>
                                 <input name="email" type="email" placeholder="Email" required="required">
+                            </label>
+                            <label for="">
+                                <span class="icon-input">
+                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/mail-input.svg" alt="">
+                                </span>
+                                <input name="date" type="date" placeholder="Date" value="<?php echo date('Y-m-d'); ?>" required="required">
                             </label>
                             <textarea name="text" placeholder="Your massage"></textarea>
                             <label>
