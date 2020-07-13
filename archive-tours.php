@@ -46,7 +46,7 @@ get_header('secondary');
 
                     <div class="col-lg-3 search-villas" id="search-villas">
 
-                        <div class="search-date">
+                        <!-- <div class="search-date">
                             <form action="">
                                 <div class="search-date__check-in search-date__item">
                                     <h6>Departure date</h6>
@@ -58,7 +58,7 @@ get_header('secondary');
                                 </div>
                                 <button class="search-date__search-btn">Search</button>
                             </form>
-                        </div>
+                        </div> -->
 
                         <div class="search-type-of-housing search-filter">
                             <h5 class="search-reviews__heading slideup-parent">Type of tour</h5>

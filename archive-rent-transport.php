@@ -49,7 +49,7 @@ get_header('secondary');
 
 
 
-                    <div class="search-date">
+                    <!-- <div class="search-date">
                         <form action="" method="POST">
                             <div class="search-date__check-in search-date__item">
                                 <h6>Check-in</h6>
@@ -66,7 +66,7 @@ get_header('secondary');
                             <button class="search-date__search-btn">Search</button>
                             <button class="search-date__map-btn">View on the map</button>
                         </form>
-                    </div>
+                    </div> -->
                     <?php $res = gf_get_min_max_by_type('rent-transport', 'rent_transport_data_price');?>
                     <div class="search-price search-price__transport">
                         <form action="" method="POST">
