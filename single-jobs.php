@@ -23,7 +23,13 @@ get_header('secondary');
                         <p class="job-info__price">
                             <strong class="job-info__price--strong"><?php the_field('job_price'); ?></strong> $
                         </p>
-                        <p class="job-info__place"><?php the_field('job_place_of_work'); ?></p>
+
+                        <?php if( !empty(get_field('job_place_link'))):?>
+                            <p class="job-info__place"><a href="<?php the_field('job_place_link'); ?>"><?php the_field('job_place_of_work'); ?></a></p>
+                        <?php else : ?>
+                            <p class="job-info__place"><?php the_field('job_place_of_work'); ?></p>
+                        <?php endif;?>
+
                         <p class="job-info__address"><?php the_field('job_address'); ?></p>
                     </div>
                     <div class="row">
