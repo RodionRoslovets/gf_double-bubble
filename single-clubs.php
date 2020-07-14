@@ -217,7 +217,7 @@ while ( have_posts() ) :
                         <?php if ($cam): ?>
                         <div class="web-cam-club">
                             <div class="web-video">
-                                <?php the_field('club_web_cam'); ?>
+                                
                             </div>
                             <h5>Web-cam in restaurant</h5>
                         </div>
@@ -444,7 +444,7 @@ while ( have_posts() ) :
     <section class="panorama-slider">
         <div class="container">
             <div class="row">
-                <?php the_field('club_tour'); ?>
+                
             </div>
         </div>
         <a class="close-panorama-slider" href="#">
@@ -483,6 +483,38 @@ while ( have_posts() ) :
 
 endwhile; // End of the loop.
 ?>
+
+<?php if (get_field('club_tour') || get_field('club_web_cam') ) { ?>
+    <script>
+        window.addEventListener('load', () => {
+            let dayRespBlock = document.querySelector('.panorama-slider .container .row'),
+                webcamResponseBlock = document.querySelector('.web-cam-club .web-video');
+
+            setTimeout(() => {
+                fetch(`${document.location.origin}/wp-admin/admin-ajax.php`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+                    },
+                    body: 'action=villas_extra&post_id=<?php echo $post->ID; ?>&type=club'
+                })
+                .then(res=>res.json())
+                .then((res)=>{
+                    
+                    if(res.day_tour){
+                        dayRespBlock.innerHTML = res.day_tour;
+                    }
+
+                    if(res.webcam){
+                        webcamResponseBlock.innerHTML = res.webcam;
+                    }
+                })
+                .catch(err=>console.log(err));
+            }, 3000);
+
+        });
+    </script>
+<?php } ?>
 
 
 <?php

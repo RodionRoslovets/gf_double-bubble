@@ -231,6 +231,7 @@ require get_template_directory() . '/inc/rent-transport-functions.php';
 require get_template_directory() . '/inc/job-functions.php';
 require get_template_directory() . '/inc/wc_price_filter.php';
 require get_template_directory() . '/inc/switch_comment_category.php';
+require get_template_directory() . '/inc/villas_extra.php';
 
 
 require get_template_directory() . '/inc/rating.php';
