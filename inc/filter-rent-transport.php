@@ -64,6 +64,47 @@ function true_filter_rent_transport(){
 
     );
 
+    if($_POST['districts']){
+        $subdistricts = explode(',', $_POST['districts']);
+
+        $districts = ['south_of_bali', 'south_west_of_bali', 'west_of_bali', 'north_of_bali', 'east_of_bali', 'center_of_bali'];
+
+        $subdistricts_slugs = [];
+
+        $count = count($subdistricts);
+
+        foreach($subdistricts as $elem){
+            for($i = 0; $i < $count; $i++){
+
+                $subdistricts_slugs[$i]['relation'] = 'OR';
+
+                foreach($districts as $district){
+                    $subdistricts_slugs[$i][] = [
+                        'taxonomy' => $district,
+                        'field' => 'slug',
+                        'terms'    => $elem,
+                        'operator' => 'IN'
+                    ];
+                }
+
+            }
+            
+        }
+
+        if(!$args['tax_query']){
+            $args['tax_query'] = ['relation' => 'AND'];
+        }
+
+        $args['tax_query'][] = [
+            'relation' => 'AND',
+            // array($subdistricts_slugs)
+        ];
+
+        foreach($subdistricts_slugs as $slug){
+            $args['tax_query'][0][] = $slug;
+        }
+    }
+
 
 
 

@@ -82,6 +82,10 @@ function price_filter_wc()
         'type' => 'NUMERIC'
     );
 
+    // echo'<pre>';
+    // var_dump($args);
+    // echo'</pre>';
+
     query_posts($args);
 
     if (have_posts()) {

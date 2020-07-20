@@ -48,22 +48,29 @@ jQuery(function ($) {
 
     let dataTerms = [];
 
-    $('.search-filter').on('input', 'form', function () {
+    $('.search-filter').on('change', 'form', function () {
         let filterTax = $(this);
         dataTerms = filterTax.serializeArray();
         let val = $("#slider-range").slider('values');
         let min_price = val[0];
         let max_price = val[1];
+
+        let districts = [...document.querySelectorAll('.search-subdistrict input[type="checkbox"]')]
+            .filter(checkbox=>checkbox.checked)
+            .map(checkbox=>checkbox.value);
+
         // console.log(dataTerms);
+        // console.log(districts);
         // let linkP = location.href;
         dataTerms.push(
             // {name: "link", value: linkP},
             { name: "action", value: 'myfilter' },
             { name: "min_price", value: min_price },
             { name: "max_price", value: max_price },
-            { name: "count_page", value: count_page },
+            // { name: "count_page", value: count_page },
             { name: "grid-price", value: select },
             { name: "count_page", value: count_page },
+            { name: "districts", value: districts },
         );
         $.ajax({
             url: ajax_pagination.ajaxurl,
@@ -312,7 +319,7 @@ jQuery(function ($) {
             {name:'grid-district', value:selectedDistrict},
             {name:'grid-day-night', value:selectedDayNight},
         );
-        console.log(dataArray);
+        // console.log(dataArray);
         $.ajax({
             url: ajax_pagination.ajaxurl,
             data: dataArray,
@@ -459,6 +466,10 @@ jQuery(function ($) {
         let max_price = val[1];
         // console.log(dataTerms);
         // let linkP = location.href;
+
+        let districts = [...document.querySelectorAll('.search-subdistrict input[type="checkbox"]')]
+            .filter(checkbox=>checkbox.checked)
+            .map(checkbox=>checkbox.value);
         dataTermsRestaurants.push(
             // {name: "link", value: linkP},
             { name: "action", value: 'restaurants' },
@@ -467,8 +478,9 @@ jQuery(function ($) {
             { name: "count_page", value: count_page },
             { name: "grid-price", value: select },
             { name: "count_page", value: count_page },
+            { name: "districts", value: districts },
         );
-        console.log(dataTermsRestaurants);
+        // console.log(dataTermsRestaurants);
         $.ajax({
             url: ajax_pagination_restaurants.ajaxurl,
             data: dataTermsRestaurants,
@@ -715,7 +727,7 @@ jQuery(function ($) {
             { name: "count_page", value: count_page },
             // {name: "grid-date", value: date_value},
         );
-        console.log(dataArray);
+        // console.log(dataArray);
         $.ajax({
             url: ajax_pagination_events.ajaxurl,
             data: dataArray,
@@ -866,7 +878,7 @@ jQuery(function ($) {
             { name: "count_page", value: count_page },
             // {name: "grid-date", value: date_value},
         );
-        console.log(dataArray);
+        // console.log(dataArray);
         $.ajax({
             url: ajax_pagination_events.ajaxurl,
             data: dataArray,
@@ -944,6 +956,10 @@ jQuery(function ($) {
         let val = $("#slider-range-rent-transport").slider('values');
         let min_price = val[0];
         let max_price = val[1];
+
+        let districts = [...document.querySelectorAll('.search-subdistrict input[type="checkbox"]')]
+            .filter(checkbox=>checkbox.checked)
+            .map(checkbox=>checkbox.value);
         // console.log(dataTerms);
         // let linkP = location.href;
         dataTerms_rent_transport.push(
@@ -954,10 +970,11 @@ jQuery(function ($) {
             { name: "count_page", value: count_page },
             { name: "grid-price", value: select },
             { name: "count_page", value: count_page },
+            { name: "districts", value: districts },
         );
         $.ajax({
             url: ajax_pagination_rent_transport.ajaxurl,
-            data: dataTerms,
+            data: dataTerms_rent_transport,
             type: 'POST',
             beforeSend: function (xhr) {
                 mainBoxRentTransport.animate({ opacity: 0.7 }, 300);
@@ -966,10 +983,9 @@ jQuery(function ($) {
                 if (posts) {
 
                     mainBoxRentTransport.html(posts); // insert new posts
+                    mainBoxRentTransport.animate({ opacity: 1 }, 300);
                     // console.log(dataTerms);
                 }
-
-                mainBoxRentTransport
             }
 
         });
@@ -998,7 +1014,7 @@ jQuery(function ($) {
             ...dataTerms
         );
 
-        console.log(dataArray)
+        // console.log(dataArray)
         $.ajax({
             url: ajax_pagination_rent_transport.ajaxurl,
             data: dataArray,

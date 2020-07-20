@@ -126,6 +126,7 @@ jQuery(function ($) {
 
     //Функция с запросом
     function filterPage(selector, obj) {
+        // console.log(obj)
         $.ajax({
             url: ajax_new_filters.ajaxurl,
             type: 'POST',
