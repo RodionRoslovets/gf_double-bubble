@@ -31,15 +31,24 @@ get_header('secondary');
                             <p>filter: </p>
                             <select class="filter-grid-events__district" name="grid-district">
                                     <option value="">-District-</option>
+                                    <option value="south_of_bali">South of Bali</option>
+                                    <option value="south_west_of_bali">South-West of Bali</option>
+                                    <option value="west_of_bali">West of Bali</option>
+                                    <option value="north_of_bali">North of Bali</option>
+                                    <option value="east_of_bali">East of Bali</option>
+                                    <option value="center_of_bali">Center of Bali</option>
+
                                     <?php
-                                        $districts_terms = get_terms( [
-                                            'taxonomy' => 'events_district',
-                                            'hide_empty' => true,
-                                            'childless'     => false,
-                                        ] );
-                                        foreach($districts_terms as $term){
-                                            echo "<option value='{$term->name}'>{$term->name}</option>";
-                                        }
+                                        // $districts_terms = get_terms( [
+                                            // 'taxonomy' => ['south_of_bali', 'south_west_of_bali', 'west_of_bali', 'north_of_bali', 'east_of_bali', 'center_of_bali'],
+                                            // 'hide_empty' => true,
+                                            // 'childless'     => false,
+                                        // ] );
+                                        // foreach($districts_terms as $term){
+                                        //     echo "<option value='{$term->name}'>{$term->name}</option>";
+
+                                            
+                                        // }
                                     ?>
                             </select>
                             <select class="filter-grid-events__day-night" name="grid-day-night">

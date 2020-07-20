@@ -47,17 +47,32 @@ function true_filter_events(){
 
     // для таксономий
 
+    //получили все термины выбраной таксономии и вывели их имена
+
+    $district_terms = get_terms( [
+        'taxonomy' => $_POST['grid-district'],
+        'hide_empty' => true,
+        'childless'     => false,
+    ] );
+
+    $district_names = [];
+
+    foreach($district_terms as $term){
+        $district_names[] = $term->name;
+    }
+
     if($_POST['grid-district']){
         $args['tax_query'] = [
             'relation' => 'AND',
             [
-                'taxonomy' => 'events_district',
+                'taxonomy' => $_POST['grid-district'],
                 'field' => 'name',
-                'terms'    => $_POST['grid-district'],
+                'terms'    => $district_names,
                 'operator' => 'IN'
             ],
         ];
     }
+
     if($_POST['grid-day-night']){
         $args['tax_query'] = [
             'relation' => 'AND',

@@ -312,7 +312,7 @@ jQuery(function ($) {
             {name:'grid-district', value:selectedDistrict},
             {name:'grid-day-night', value:selectedDayNight},
         );
-        // console.log(dataArray);
+        console.log(dataArray);
         $.ajax({
             url: ajax_pagination.ajaxurl,
             data: dataArray,
