@@ -63,13 +63,25 @@ function true_filter_clubs(){
     );
 
 
+    $district_terms = get_terms( [
+        'taxonomy' => $_POST['grid-district'],
+        'hide_empty' => true,
+        'childless'     => false,
+    ] );
+
+    $district_names = [];
+
+    foreach($district_terms as $term){
+        $district_names[] = $term->name;
+    }
+
     if($_POST['grid-district']){
         $args['tax_query'] = [
             'relation' => 'AND',
             [
-                'taxonomy' => 'clubs_district',
+                'taxonomy' => $_POST['grid-district'],
                 'field' => 'name',
-                'terms'    => $_POST['grid-district'],
+                'terms'    => $district_names,
                 'operator' => 'IN'
             ],
         ];
@@ -210,8 +222,9 @@ function true_filter_clubs(){
 
     <?php endwhile; ?>
         <!-- post navigation -->
-    <?php else: ?>
-        <!--no posts found-->
+    <?php else: 
+        get_template_part( 'template-parts/content', 'none' );?>
+        
     <?php endif; ?>
 
     <div class="pagination-block">
