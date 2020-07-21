@@ -48,7 +48,7 @@ jQuery(function ($) {
 
     let dataTerms = [];
 
-    $('.search-filter').on('change', 'form', function () {
+    $('.search-filter.search-villas').on('change', 'form', function () {
         let filterTax = $(this);
         dataTerms = filterTax.serializeArray();
         let val = $("#slider-range").slider('values');
@@ -77,15 +77,15 @@ jQuery(function ($) {
             data: dataTerms,
             type: 'POST',
             beforeSend: function (xhr) {
+                $('.search-filter.search-villas .search-villas__overlay').fadeIn(300);
                 mainBox.animate({ opacity: 0.7 }, 300);
             },
             success: function (posts) {
                 if (posts) {
 
                     mainBox.html(posts); // insert new posts
-                    // console.log(dataTerms);
                 }
-
+                $('.search-filter.search-villas .search-villas__overlay').fadeOut(300);
                 mainBox.animate({ opacity: 1 }, 300);
 
             }
@@ -458,7 +458,7 @@ jQuery(function ($) {
 
     let dataTermsRestaurants = [];
 
-    $('.search-filter').on('input', 'form', function () {
+    $('.search-filter.search-restaurants').on('input', 'form', function () {
         let filterRestaurants = $(this);
         dataTermsRestaurants = filterRestaurants.serializeArray();
         let val = $("#slider-range").slider('values');
@@ -486,6 +486,7 @@ jQuery(function ($) {
             data: dataTermsRestaurants,
             type: 'POST',
             beforeSend: function (xhr) {
+                $('.search-filter.search-restaurants .search-restaurants__overlay').fadeIn(300);
                 mainBoxRestaurants.animate({ opacity: 0.7 }, 300);
             },
             success: function (posts) {
@@ -494,7 +495,7 @@ jQuery(function ($) {
                     mainBoxRestaurants.html(posts); // insert new posts
                     // console.log(dataTermsRestaurants);
                 }
-
+                $('.search-filter.search-restaurants .search-restaurants__overlay').fadeOut(300);
                 mainBoxRestaurants.animate({ opacity: 1 }, 300);
 
             }
@@ -950,7 +951,7 @@ jQuery(function ($) {
 
     let dataTerms_rent_transport = [];
 
-    $('.search-filter').on('input', 'form', function () {
+    $('.search-filter.search-transport').on('input', 'form', function () {
         let filterTax = $(this);
         dataTerms_rent_transport = filterTax.serializeArray();
         let val = $("#slider-range-rent-transport").slider('values');
@@ -977,12 +978,14 @@ jQuery(function ($) {
             data: dataTerms_rent_transport,
             type: 'POST',
             beforeSend: function (xhr) {
+                $('.search-filter.search-transport .search-transport__overlay').fadeIn(300);
                 mainBoxRentTransport.animate({ opacity: 0.7 }, 300);
             },
             success: function (posts) {
                 if (posts) {
 
                     mainBoxRentTransport.html(posts); // insert new posts
+                    $('.search-filter.search-transport .search-transport__overlay').fadeOut(300);
                     mainBoxRentTransport.animate({ opacity: 1 }, 300);
                     // console.log(dataTerms);
                 }

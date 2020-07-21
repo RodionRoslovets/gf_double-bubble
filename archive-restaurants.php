@@ -45,7 +45,7 @@ get_header('secondary');
 
                     <div class="col-lg-3 search-villas" id="search-villas">
 
-                        <div class="search-distance search-filter">
+                        <div class="search-distance search-filter search-restaurants">
                             <form action="">
                                 <h5 class="search-reviews__heading slideup-parent">Kitchen</h5>
                                 <?php $terms = get_terms( [
@@ -84,9 +84,10 @@ get_header('secondary');
                                     <?php endforeach; ?>
                                 </ul>
                             </form>
+                            <div class="search-restaurants__overlay" style="display:none;"></div>
                         </div>
 
-                        <div class="search-lions search-filter">
+                        <div class="search-lions search-filter search-restaurants">
                             <h5 class="search-reviews__heading slideup-parent">Review Score</h5>
                             <ul class="search-reviews__list slideup-child">
                                 <li><label>
@@ -115,8 +116,9 @@ get_header('secondary');
                                         <span class="checkmark"></span>
                                     </label></li>
                             </ul>
+                            <div class="search-restaurants__overlay" style="display:none;"></div>
                         </div>
-                        <div class="search-subdistrict search-filter">
+                        <div class="search-subdistrict search-filter search-restaurants">
                         <form>
                             <h5 class="search-reviews__heading slideup-parent">South of Bali</h5>
                             <ul class="search-reviews__list slideup-child">
@@ -137,8 +139,9 @@ get_header('secondary');
                                 ?>
                             </ul>
                         </form>
+                        <div class="search-restaurants__overlay" style="display:none;"></div>
                     </div>
-                    <div class="search-subdistrict search-filter">
+                    <div class="search-subdistrict search-filter search-restaurants">
                         <form>
                             <h5 class="search-reviews__heading slideup-parent">South-West of Bali</h5>
                             <ul class="search-reviews__list slideup-child">
@@ -159,8 +162,9 @@ get_header('secondary');
                                 ?>
                             </ul>
                         </form>
+                        <div class="search-restaurants__overlay" style="display:none;"></div>
                     </div>
-                    <div class="search-subdistrict search-filter">
+                    <div class="search-subdistrict search-filter search-restaurants">
                         <form>
                             <h5 class="search-reviews__heading slideup-parent">West of Bali</h5>
                             <ul class="search-reviews__list slideup-child">
@@ -181,8 +185,9 @@ get_header('secondary');
                                 ?>
                             </ul>
                         </form>
+                        <div class="search-restaurants__overlay" style="display:none;"></div>
                     </div>
-                    <div class="search-subdistrict search-filter">
+                    <div class="search-subdistrict search-filter search-restaurants">
                         <form>
                             <h5 class="search-reviews__heading slideup-parent">North of Bali</h5>
                             <ul class="search-reviews__list slideup-child">
@@ -203,8 +208,9 @@ get_header('secondary');
                                 ?>
                             </ul>
                         </form>
+                        <div class="search-restaurants__overlay" style="display:none;"></div>
                     </div>
-                    <div class="search-subdistrict search-filter">
+                    <div class="search-subdistrict search-filter search-restaurants">
                         <form>
                             <h5 class="search-reviews__heading slideup-parent">East of Bali</h5>
                             <ul class="search-reviews__list slideup-child">
@@ -225,8 +231,9 @@ get_header('secondary');
                                 ?>
                             </ul>
                         </form>
+                        <div class="search-restaurants__overlay" style="display:none;"></div>
                     </div>
-                    <div class="search-subdistrict search-filter">
+                    <div class="search-subdistrict search-filter search-restaurants">
                         <form>
                             <h5 class="search-reviews__heading slideup-parent">Center of Bali</h5>
                             <ul class="search-reviews__list slideup-child">
@@ -247,6 +254,7 @@ get_header('secondary');
                                 ?>
                             </ul>
                         </form>
+                        <div class="search-restaurants__overlay" style="display:none;"></div>
                     </div>
 
 <!--                        <div class="search-type-of-housing search-filter">-->

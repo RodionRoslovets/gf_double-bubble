@@ -15310,6 +15310,22 @@ ul#menu-header-left-menu li.menu-item-has-children:hover > a::after{
   bottom:0;
 }
 
+.search-filter.search-villas,
+.search-filter.search-restaurants,
+.search-filter.search-transport{
+  position:relative;
+}
+
+.search-villas__overlay,
+.search-restaurants__overlay,
+.search-transport__overlay{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(255,255,255,0.7);
+  top: 0;
+}
+
 
 
 /*==========  Desktop First  ==========*/
