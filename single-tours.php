@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Post Type: tours
  */
@@ -9,11 +10,11 @@ get_header('secondary');
 
 
 <?php
-while ( have_posts() ) :
+while (have_posts()) :
     the_post();
 
-//			get_template_part( 'template-parts/content', get_post_type() );
-    ?>
+    //			get_template_part( 'template-parts/content', get_post_type() );
+?>
 
 
     <main class="main-content">
@@ -41,31 +42,50 @@ while ( have_posts() ) :
                                 <?php echo do_shortcode('[average_rating]') ?>
                                 <!--                                <span>9.2</span>-->
                                 <!--                                <div class="star-block">-->
-                                <!--                                    <img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-full.svg" alt=""><img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-full.svg" alt=""><img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-full.svg" alt=""><img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-empty.svg" alt=""><img-->
-                                <!--                                            src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-empty.svg" alt=""></div>-->
+                                <!--                                    <img src="--><?php //echo get_template_directory_uri(); 
+                                                                                        ?>
+                                <!--/assets/img/icons/star-full.svg" alt=""><img src="--><?php //echo get_template_directory_uri(); 
+                                                                                            ?>
+                                <!--/assets/img/icons/star-full.svg" alt=""><img src="--><?php //echo get_template_directory_uri(); 
+                                                                                            ?>
+                                <!--/assets/img/icons/star-full.svg" alt=""><img src="--><?php //echo get_template_directory_uri(); 
+                                                                                            ?>
+                                <!--/assets/img/icons/star-empty.svg" alt=""><img-->
+                                <!--                                            src="--><?php //echo get_template_directory_uri(); 
+                                                                                        ?>
+                                <!--/assets/img/icons/star-empty.svg" alt=""></div>-->
                                 <!--                                <div class="count-rating-review">-->
                                 <!--                                    <a href="#">56 Reviews</a>-->
                                 <!--                                </div>-->
                             </div>
                             <!--                            <ul class="share-socials">-->
-                            <!--                                <li><a href="#"><span><img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/vk.svg" alt=""></span><span>16</span></a></li>-->
-                            <!--                                <li><a href="#"><span><img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/fb.svg" alt=""></span><span>16</span></a></li>-->
-                            <!--                                <li><a href="#"><span><img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/insta.svg" alt=""></span><span>16</span></a></li>-->
+                            <!--                                <li><a href="#"><span><img src="--><?php //echo get_template_directory_uri(); 
+                                                                                                    ?>
+                            <!--/assets/img/icons/vk.svg" alt=""></span><span>16</span></a></li>-->
+                            <!--                                <li><a href="#"><span><img src="--><?php //echo get_template_directory_uri(); 
+                                                                                                    ?>
+                            <!--/assets/img/icons/fb.svg" alt=""></span><span>16</span></a></li>-->
+                            <!--                                <li><a href="#"><span><img src="--><?php //echo get_template_directory_uri(); 
+                                                                                                    ?>
+                            <!--/assets/img/icons/insta.svg" alt=""></span><span>16</span></a></li>-->
                             <!--                            </ul>-->
                             <div class="addthis_inline_share_toolbox"></div>
                             <div class="villa-blue-heart mobile-visible">
-                                <!--                                <p><img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/heart-favorite.svg" alt=""></p>-->
-                                <!--                                --><?php //if ( function_exists( 'wfp_button' ) ) wfp_button(); ?>
+                                <!--                                <p><img src="--><?php //echo get_template_directory_uri(); 
+                                                                                    ?>
+                                <!--/assets/img/icons/heart-favorite.svg" alt=""></p>-->
+                                <!--                                --><?php //if ( function_exists( 'wfp_button' ) ) wfp_button(); 
+                                                                        ?>
                                 <?php echo do_shortcode('[favorite_button]') ?>
                             </div>
                             <div class="day-tour-panorama">
-                                <?php if(get_field('tours_day_tour')):?>
+                                <?php if (get_field('tours_day_tour')) : ?>
                                     <a href="#" class="club-panorama desktop-visible">
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/play.svg" alt="">
                                         <p><?php echo esc_html__('Day Tour', 'double'); ?></p>
                                     </a>
                                 <?php endif; ?>
-                                <?php if(get_field('tours_night_tour')):?>
+                                <?php if (get_field('tours_night_tour')) : ?>
                                     <a href="#" class="club-panorama2 desktop-visible">
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/play.svg" alt="">
                                         <p><?php echo esc_html__('Night Tour', 'double'); ?></p>
@@ -82,9 +102,9 @@ while ( have_posts() ) :
 
                         <?php
                         $images = get_field('gallery_tours');
-                        if( $images ): ?>
+                        if ($images) : ?>
                             <div class="villas-slider" data-nav="thumbs" data-autoplay="true">
-                                <?php foreach( $images as $image ): ?>
+                                <?php foreach ($images as $image) : ?>
                                     <a href="<?php echo esc_url($image['url']); ?>"><img src="<?php echo esc_url($image['url']); ?>"></a>
                                 <?php endforeach; ?>
                             </div>
@@ -102,24 +122,25 @@ while ( have_posts() ) :
                         <div class="villa-top-page__info">
                             <div class="villa-top-page__info-block">
                                 <div class="tour-top-page__price">
-                                    <p><?php echo esc_html( $tours['price'] ); ?><span>&#36;</span></p>
+                                    <p><?php echo esc_html($tours['price']); ?><span>&#36;</span></p>
                                     <p>count person</p>
                                     <div class="tour-top-page__info-count">
-                                <span class="tour-top-page__info-count-dec">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/minus.svg" alt="">
-                                </span>
+                                        <span class="tour-top-page__info-count-dec">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/minus.svg" alt="">
+                                        </span>
                                         <input class="tour-top-page__info-count-val" type="text" value="1" readonly>
                                         <span class="tour-top-page__info-count-inc">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/plus.svg" alt="">
-                                </span>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/plus.svg" alt="">
+                                        </span>
                                     </div>
                                 </div>
-
-                                <div class="villa-top-page__book-btns">
-                                    <a href="#" class="book-btn bg-btn-red call-contact-owner">
-                                        Book now
-                                    </a>
-                                </div>
+                                <?php if (get_field('email_owner_villa')) : ?>
+                                    <div class="villa-top-page__book-btns">
+                                        <a href="#" class="book-btn bg-btn-red call-contact-owner">
+                                            Book now
+                                        </a>
+                                    </div>
+                                <?php endif; ?>
 
                             </div>
 
@@ -132,12 +153,16 @@ while ( have_posts() ) :
                             </div>
 
                             <div class="villa-top-page__info-favorites desktop-visible">
-                                <!--                                <p><img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/heart-favorite.svg" alt=""></p>-->
+                                <!--                                <p><img src="--><?php //echo get_template_directory_uri(); 
+                                                                                    ?>
+                                <!--/assets/img/icons/heart-favorite.svg" alt=""></p>-->
                                 <!--                                <a href="#">To favorites</a>-->
                                 <?php echo do_shortcode('[favorite_button]') ?>
-                                <!--                                --><?php //if ( function_exists( 'wfp_button' ) ) wfp_button(); ?>
+                                <!--                                --><?php //if ( function_exists( 'wfp_button' ) ) wfp_button(); 
+                                                                        ?>
                             </div>
-                            <!--                            --><?php //do_shortcode('[favorite-post]') ?>
+                            <!--                            --><?php //do_shortcode('[favorite-post]') 
+                                                                ?>
                         </div>
                     </div>
                 </div>
@@ -160,11 +185,21 @@ while ( have_posts() ) :
                 <!--                        <div class="rating-club-count">-->
                 <!--                            <span>9.2</span>-->
                 <!--                            <div class="star-block">-->
-                <!--                                <img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-full.svg" alt="">-->
-                <!--                                <img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-full.svg" alt="">-->
-                <!--                                <img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-full.svg" alt="">-->
-                <!--                                <img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-empty.svg" alt="">-->
-                <!--                                <img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-empty.svg" alt="">-->
+                <!--                                <img src="--><?php //echo get_template_directory_uri(); 
+                                                                    ?>
+                <!--/assets/img/icons/star-full.svg" alt="">-->
+                <!--                                <img src="--><?php //echo get_template_directory_uri(); 
+                                                                    ?>
+                <!--/assets/img/icons/star-full.svg" alt="">-->
+                <!--                                <img src="--><?php //echo get_template_directory_uri(); 
+                                                                    ?>
+                <!--/assets/img/icons/star-full.svg" alt="">-->
+                <!--                                <img src="--><?php //echo get_template_directory_uri(); 
+                                                                    ?>
+                <!--/assets/img/icons/star-empty.svg" alt="">-->
+                <!--                                <img src="--><?php //echo get_template_directory_uri(); 
+                                                                    ?>
+                <!--/assets/img/icons/star-empty.svg" alt="">-->
                 <!--                            </div>-->
                 <!--                        </div>-->
                 <!--                        <div class="rating-club-progress">-->
@@ -197,7 +232,9 @@ while ( have_posts() ) :
                 <!--                    <div class="block-comments">-->
                 <!--                        <div class="item-comment">-->
                 <!--                            <div class="item-comment-avatar">-->
-                <!--                                <div class="user-comment-avatar"><img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/comments/1.jpg" alt=""></div>-->
+                <!--                                <div class="user-comment-avatar"><img src="--><?php //echo get_template_directory_uri(); 
+                                                                                                    ?>
+                <!--/assets/img/comments/1.jpg" alt=""></div>-->
                 <!--                                <div class="comment-content">-->
                 <!--                                    <h5 class="mobile-visible">Alex</h5>-->
                 <!--                                    <span class="mobile-visible">11.12.2019</span>-->
@@ -215,7 +252,9 @@ while ( have_posts() ) :
                 <!---->
                 <!--                        <div class="item-comment">-->
                 <!--                            <div class="item-comment-avatar">-->
-                <!--                                <div class="user-comment-avatar"><img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/comments/2.jpg" alt=""></div>-->
+                <!--                                <div class="user-comment-avatar"><img src="--><?php //echo get_template_directory_uri(); 
+                                                                                                    ?>
+                <!--/assets/img/comments/2.jpg" alt=""></div>-->
                 <!--                                <div class="comment-content">-->
                 <!--                                    <h5 class="mobile-visible">Segey Ivanov</h5>-->
                 <!--                                    <span class="mobile-visible">11.12.2019</span>-->
@@ -233,7 +272,9 @@ while ( have_posts() ) :
                 <!---->
                 <!--                        <div class="item-comment">-->
                 <!--                            <div class="item-comment-avatar">-->
-                <!--                                <div class="user-comment-avatar"><img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/comments/3.jpg" alt=""></div>-->
+                <!--                                <div class="user-comment-avatar"><img src="--><?php //echo get_template_directory_uri(); 
+                                                                                                    ?>
+                <!--/assets/img/comments/3.jpg" alt=""></div>-->
                 <!--                                <div class="comment-content">-->
                 <!--                                    <h5 class="mobile-visible">Julia</h5>-->
                 <!--                                    <span class="mobile-visible">11.12.2019</span>-->
@@ -273,102 +314,113 @@ while ( have_posts() ) :
         </div>
     </main>
 
-    <?php if(get_field('tours_day_tour')):?>
-    <section class="panorama-slider">
-        <div class="container">
-            <div class="row">
-                <?php the_field('tours_day_tour'); ?>
+    <?php if (get_field('tours_day_tour')) : ?>
+        <section class="panorama-slider">
+            <div class="container">
+                <div class="row">
+                    <?php the_field('tours_day_tour'); ?>
+                </div>
             </div>
-        </div>
-        <a class="close-panorama-slider" href="#">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/cross-modal.svg" alt="">
-        </a>
+            <a class="close-panorama-slider" href="#">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/cross-modal.svg" alt="">
+            </a>
 
-    </section>
-<?php endif; ?>
-    <?php if(get_field('tours_night_tour')):?>
+        </section>
+    <?php endif; ?>
+    <?php if (get_field('tours_night_tour')) : ?>
 
-    <section class="panorama-slider2">
-        <div class="container">
-            <div class="row">
-                <?php the_field('tours_night_tour'); ?>
+        <section class="panorama-slider2">
+            <div class="container">
+                <div class="row">
+                    <?php the_field('tours_night_tour'); ?>
+                </div>
             </div>
-        </div>
-        <a class="close-panorama-slider2" href="#">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/cross-modal.svg" alt="">
-        </a>
+            <a class="close-panorama-slider2" href="#">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/cross-modal.svg" alt="">
+            </a>
 
-    </section>
-<?php endif; ?>
+        </section>
+    <?php endif; ?>
 
-<?php if ( get_field('email_owner_villa') ): ?>
-    <section class="modal-contact-owner">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 d-flex justify-content-center">
-                    <div class="form-contact-owner">
-                        <h4>Contact owner</h4>
-                        <form action="" method="post" id="form-contact-owner">
-                            <label for="">
-                                <span class="icon-input">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/user-input.svg" alt="">
-                                </span>
-                                <input name="name" type="text" placeholder="Name" required="required">
-                            </label>
-                            <label for="">
-                                <span class="icon-input">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/mail-input.svg" alt="">
-                                </span>
-                                <input name="email" type="email" placeholder="Email" required="required">
-                            </label>
-                            <label for="">
-                                <span class="icon-input">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/mail-input.svg" alt="">
-                                </span>
-                                <input name="date" type="date" value="<?php echo date('Y-m-d'); ?>" required="required">
-                            </label>
-                            <textarea name="text" placeholder="Your massage"></textarea>
-                            <label>
-                                <input type="checkbox" name="checkbox" value="check" id="agree" required="required" /><p> I have read and agree to the <a href="#">Terms and Conditions and Privacy Policy</a></p>
-                            </label>
-                            <input type="email" name="email_owner" hidden value="<?php the_field('email_owner_villa') ?>">
-                            <input type="submit" value="send">
-                        </form>
-                        <div class="close-contact-owner">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/cross-modal.svg" alt="">
+    <?php if (get_field('email_owner_villa')) : ?>
+        <section class="modal-contact-owner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center">
+                        <div class="form-contact-owner">
+                            <h4>Contact owner</h4>
+                            <form action="" method="post" id="form-contact-owner">
+                                <label for="">
+                                    <span class="icon-input">
+                                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/user-input.svg" alt="">
+                                    </span>
+                                    <input name="name" type="text" placeholder="Name" required="required">
+                                </label>
+                                <label for="">
+                                    <span class="icon-input">
+                                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/mail-input.svg" alt="">
+                                    </span>
+                                    <input name="email" type="email" placeholder="Email" required="required">
+                                </label>
+                                <label for="">
+                                    <span class="icon-input">
+                                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/mail-input.svg" alt="">
+                                    </span>
+                                    <input name="date" type="date" value="<?php echo date('Y-m-d'); ?>" required="required">
+                                </label>
+                                <textarea name="text" placeholder="Your massage"></textarea>
+                                <label>
+                                    <input type="checkbox" name="checkbox" value="check" id="agree" required="required" />
+                                    <p> I have read and agree to the <a href="#">Terms and Conditions and Privacy Policy</a></p>
+                                </label>
+                                <input type="email" name="email_owner" hidden value="<?php the_field('email_owner_villa') ?>">
+                                <input type="submit" value="send">
+                            </form>
+                            <div class="close-contact-owner">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/cross-modal.svg" alt="">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-<?php endif; ?>
+        </section>
+    <?php endif; ?>
 
     <!-- <section class="panorama-slider">
         <div class="container">
             <div class="row">
                 <?php
-    //$gallery = get_field('panorama_gallery');
-    ?>
-                <?php //if( $gallery ): ?>
-                <?php //$count = 1 ?>
+                //$gallery = get_field('panorama_gallery');
+                ?>
+                <?php //if( $gallery ): 
+                ?>
+                <?php //$count = 1 
+                ?>
                     <ul id="lightSlider">
-                        <?php //foreach( $gallery as $image ): ?>
-                            <li class="lightSlider-item" data-thumb="<?php //echo esc_url($image['url']); ?>">
-                                <div id="panorama<?php //echo $count; ?>" class="panorama-item"></div>
+                        <?php //foreach( $gallery as $image ): 
+                        ?>
+                            <li class="lightSlider-item" data-thumb="<?php //echo esc_url($image['url']); 
+                                                                        ?>">
+                                <div id="panorama<?php //echo $count; 
+                                                    ?>" class="panorama-item"></div>
                                 <script>
-                                    pannellum.viewer('panorama<?php //echo $count; ?>', //{
+                                    pannellum.viewer('panorama<?php //echo $count; 
+                                                                ?>', //{
                                         "type": "equirectangular",
-                                        "panorama": "<?php //echo esc_url($image['url']); ?>",
+                                        "panorama": "<?php //echo esc_url($image['url']); 
+                                                        ?>",
                                         "autoLoad": true,
                                         "scale": false
                                     //});
                                 </script>
                             </li>
-                            <?php //$count++ ?>
-                        <?php //endforeach; ?>
+                            <?php //$count++ 
+                            ?>
+                        <?php //endforeach; 
+                        ?>
                     </ul>
-                <?php //endif; ?>
+                <?php //endif; 
+                ?>
             </div>
         </div>
 

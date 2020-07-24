@@ -256,7 +256,7 @@ while (have_posts()) :
                         <div class="row content-club">
                             <h2 class="titles-page">About villa</h2>
                             <div class="col-12">
-                                <?php the_content();?>
+                                <?php the_content(); ?>
                             </div>
                         </div>
                         <div class="villa-top-page__info-block mobile-visible">
@@ -307,16 +307,18 @@ while (have_posts()) :
                                             <?php echo $villa_data['phone'] ?></a>
                                     </div>
                                 <?php endif; ?>
-                                <div class="villa-top-page__book-btns">
-                                    <a href="#" class="book-btn bg-btn-red">
-                                        Book now
-                                    </a>
-                                    <?php if (get_field('email_owner_villa')) : ?>
+
+                                <?php if (get_field('email_owner_villa')) : ?>
+                                    <div class="villa-top-page__book-btns">
+                                        <a href="#" class="book-btn bg-btn-red">
+                                            Book now
+                                        </a>
                                         <a href="#" class="book-btn bg-btn-white call-contact-owner">
                                             Contact owner
                                         </a>
-                                    <?php endif; ?>
-                                </div>
+                                    </div>
+                                <?php endif; ?>
+
                                 <?php if ($villa_data['go_to_website']) : ?>
                                     <div class="villa-top-page__to-site">
                                         <a href="<?php echo $villa_data['go_to_website'] ?>" target="_blank">Go to
@@ -551,22 +553,22 @@ endwhile; // End of the loop.
 
             setTimeout(() => {
                 fetch(`${document.location.origin}/wp-admin/admin-ajax.php`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-                    },
-                    body: 'action=villas_extra&post_id=<?php echo $post->ID; ?>&type=villa'
-                })
-                .then(res=>res.json())
-                .then((res)=>{
-                    if(res.day_tour){
-                        dayRespBlock.innerHTML = res.day_tour;
-                    }
-                    if(res.night_tour){
-                        nightRespBlock.innerHTML = res.night_tour;
-                    }
-                })
-                .catch(err=>console.log(err));
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+                        },
+                        body: 'action=villas_extra&post_id=<?php echo $post->ID; ?>&type=villa'
+                    })
+                    .then(res => res.json())
+                    .then((res) => {
+                        if (res.day_tour) {
+                            dayRespBlock.innerHTML = res.day_tour;
+                        }
+                        if (res.night_tour) {
+                            nightRespBlock.innerHTML = res.night_tour;
+                        }
+                    })
+                    .catch(err => console.log(err));
             }, 3000);
 
         });
