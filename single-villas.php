@@ -435,6 +435,18 @@ while (have_posts()) :
                 </div>
             </div>
 
+            <?php 
+                if(get_field('map_link')){
+                    ?>
+                        <div class="map">
+                            <?php
+                                the_field('map_link');
+                            ?>
+                        </div>
+                    <?php
+                }
+            ?>
+
 
             <div class="row">
 

@@ -47,6 +47,15 @@ while (have_posts()) :
                             </div>
                         </div>
 
+                        <div class="day-tour-panorama">
+                            <?php if (get_field('transport_tour')) : ?>
+                                <a href="#" class="club-panorama">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/play.svg" alt="">
+                                    <p><?php echo esc_html__('Tour 360', 'double'); ?></p>
+                                </a>
+                            <?php endif; ?>
+                        </div>
+
                     </div>
                 </div>
 
@@ -67,6 +76,17 @@ while (have_posts()) :
                             <h2 class="titles-page">About transport</h2>
                             <?php the_content(); ?>
                         </div>
+                        <?php
+                        if (get_field('map_link')) {
+                        ?>
+                            <div class="map">
+                                <?php
+                                the_field('map_link');
+                                ?>
+                            </div>
+                        <?php
+                        }
+                        ?>
 
                     </div>
                     <div class="col-lg-4">
@@ -169,6 +189,7 @@ while (have_posts()) :
                 </div>
             </div>
         </div>
+
     </main>
 
     <section class="panorama-slider">
@@ -257,7 +278,19 @@ while (have_posts()) :
 endwhile; // End of the loop.
 ?>
 
+<?php if (get_field('transport_tour')) : ?>
+    <section class="panorama-slider">
+        <div class="container">
+            <div class="row">
+                <?php the_field('transport_tour'); ?>
+            </div>
+        </div>
+        <a class="close-panorama-slider" href="#">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/cross-modal.svg" alt="">
+        </a>
 
+    </section>
+<?php endif; ?>
 <?php
 //get_sidebar();
 get_footer();

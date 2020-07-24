@@ -270,6 +270,18 @@ while ( have_posts() ) :
                     </div>
                 </div>
 
+                <?php 
+                if(get_field('map_link')){
+                    ?>
+                        <div class="map">
+                            <?php
+                                the_field('map_link');
+                            ?>
+                        </div>
+                    <?php
+                }
+                ?>
+
                 <div class="row">
                     <h2 class="titles-page title-page-hr">Video <hr /></h2>
                     <div class="slider-video owl-theme owl-carousel">
@@ -434,6 +446,8 @@ while ( have_posts() ) :
 
 
                 </div>
+
+                
 
                 <?php if ( comments_open() || get_comments_number() ) {
                     comments_template();

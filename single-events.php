@@ -186,6 +186,18 @@ the_post();
                 </div>
             </div>
 
+            <?php 
+                if(get_field('map_link')){
+                    ?>
+                        <div class="map">
+                            <?php
+                                the_field('map_link');
+                            ?>
+                        </div>
+                    <?php
+                }
+                ?>
+
             <div class="row events-in-club">
                 <h2 class="titles-page">Other event</h2>
 

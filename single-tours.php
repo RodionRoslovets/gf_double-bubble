@@ -146,9 +146,19 @@ while (have_posts()) :
 
                             <div class="tour-top-page__info-options">
                                 <ul>
-                                    <li>By car</li>
-                                    <li>2-2.5 hours</li>
-                                    <li>Destination А - Destination B</li>
+                                    <?php
+                                     $post = get_post();
+                                     $terms = get_terms([
+                                        'taxonomy' => 'tour_facilities',
+                                        'hide_empty' => false,
+                                        'get'           => 'all',
+                                        'childless'     => true,
+                                        'object_ids' => $post->ID,
+                                    ]);
+                                    foreach($terms as $term){
+                                        echo '<li>'.$term->name.'</li>';
+                                    }
+                                    ?>
                                 </ul>
                             </div>
 
@@ -181,6 +191,18 @@ while (have_posts()) :
                     <h2 class="titles-page">About tour</h2>
                     <p><?php the_content(); ?></p>
                 </div>
+
+                <?php 
+                if(get_field('map_link')){
+                    ?>
+                        <div class="map">
+                            <?php
+                                the_field('map_link');
+                            ?>
+                        </div>
+                    <?php
+                }
+                ?>
 
 
 
@@ -454,6 +476,8 @@ while (have_posts()) :
 
 endwhile; // End of the loop.
 ?>
+
+
 
 
 <?php

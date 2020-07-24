@@ -441,6 +441,18 @@ while (have_posts()) :
                 <!--                    </div>-->
                 <!--                </div>-->
 
+                <?php 
+                if(get_field('map_link')){
+                    ?>
+                        <div class="map">
+                            <?php
+                                the_field('map_link');
+                            ?>
+                        </div>
+                    <?php
+                }
+                ?>
+
                 <?php if ( comments_open() || get_comments_number() ) {
                     comments_template();
                 } ?>
