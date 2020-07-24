@@ -163,6 +163,15 @@ while (have_posts()) :
                             </div>
                             <!--                            --><?php //do_shortcode('[favorite-post]') 
                                                                 ?>
+                            <?php $cam = get_field('restaurant_web_cam'); ?>
+                            <?php if ($cam): ?>
+                            <div class="web-cam-restaurant">
+                                <div class="web-video">
+                                    <?php echo $cam;?>
+                                </div>
+                                <h5>Web-cam in tour</h5>
+                            </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
@@ -362,11 +371,19 @@ while (have_posts()) :
                                     </span>
                                     <input name="email" type="email" placeholder="Email" required="required">
                                 </label>
+                                <span>From:</span>
                                 <label for="">
                                     <span class="icon-input">
                                         <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/mail-input.svg" alt="">
                                     </span>
-                                    <input name="date" type="date" value="<?php echo date('Y-m-d'); ?>" required="required">
+                                    <input name="date-from" type="date" value="<?php echo date('Y-m-d'); ?>" required="required">
+                                </label>
+                                <span>To:</span>
+                                <label for="">
+                                    <span class="icon-input">
+                                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/mail-input.svg" alt="">
+                                    </span>
+                                    <input name="date-to" type="date" value="<?php echo date('Y-m-d'); ?>" required="required">
                                 </label>
                                 <textarea name="text" placeholder="Your massage"></textarea>
                                 <label>
