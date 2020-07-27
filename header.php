@@ -21,7 +21,7 @@
     <title><?php bloginfo('name'); ?></title>
     <meta name="description" content="<?php bloginfo('description'); ?>">
 
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/img/favicon/favicon.ico">
     <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/assets/img/@1x/preview.jpg">
