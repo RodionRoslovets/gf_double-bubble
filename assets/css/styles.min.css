@@ -15312,13 +15312,15 @@ ul#menu-header-left-menu li.menu-item-has-children:hover > a::after{
 
 .search-filter.search-villas,
 .search-filter.search-restaurants,
-.search-filter.search-transport{
+.search-filter.search-transport,
+.search-filter.search-tours{
   position:relative;
 }
 
 .search-villas__overlay,
 .search-restaurants__overlay,
-.search-transport__overlay{
+.search-transport__overlay,
+.search-tours__overlay{
   position:absolute;
   width:100%;
   height:100%;

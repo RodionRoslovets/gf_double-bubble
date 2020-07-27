@@ -60,7 +60,7 @@ get_header('secondary');
                             </form>
                         </div> -->
 
-                        <div class="search-type-of-housing search-filter">
+                        <div class="search-type-of-housing search-filter search-tours">
                             <h5 class="search-reviews__heading slideup-parent">Type of tour</h5>
                             <ul class="search-reviews__list slideup-child">
                                 <li><label>
@@ -90,6 +90,144 @@ get_header('secondary');
                                     </label></li>
                             </ul>
                         </div>
+                        <div class="search-subdistrict search-filter search-tours">
+                        <form>
+                            <h5 class="search-reviews__heading slideup-parent">South of Bali</h5>
+                            <ul class="search-reviews__list slideup-child">
+                                <?php
+                                $south_terms = get_terms([
+                                    'taxonomy' => 'south_of_bali',
+                                    'hide_empty' => false,
+                                    // 'childless'     => false,
+                                ]);
+
+                                foreach ($south_terms as $term) { ?>
+                                    <li><label>
+                                            <?= $term->name ?>
+                                            <input type="checkbox" value="<?= $term->slug ?>">
+                                            <span class="checkmark"></span>
+                                        </label></li>
+                                <?php }
+                                ?>
+                            </ul>
+                        </form>
+                        <div class="search-tours__overlay" style="display:none;"></div>
+                    </div>
+                    <div class="search-subdistrict search-filter search-tours">
+                        <form>
+                            <h5 class="search-reviews__heading slideup-parent">South-West of Bali</h5>
+                            <ul class="search-reviews__list slideup-child">
+                                <?php
+                                $south_terms = get_terms([
+                                    'taxonomy' => 'south_west_of_bali',
+                                    'hide_empty' => false,
+                                    // 'childless'     => false,
+                                ]);
+
+                                foreach ($south_terms as $term) { ?>
+                                    <li><label>
+                                            <?= $term->name ?>
+                                            <input type="checkbox" value="<?= $term->slug ?>">
+                                            <span class="checkmark"></span>
+                                        </label></li>
+                                <?php }
+                                ?>
+                            </ul>
+                        </form>
+                        <div class="search-tours__overlay" style="display:none;"></div>
+                    </div>
+                    <div class="search-subdistrict search-filter search-tours">
+                        <form>
+                            <h5 class="search-reviews__heading slideup-parent">West of Bali</h5>
+                            <ul class="search-reviews__list slideup-child">
+                                <?php
+                                $south_terms = get_terms([
+                                    'taxonomy' => 'west_of_bali',
+                                    'hide_empty' => false,
+                                    // 'childless'     => false,
+                                ]);
+
+                                foreach ($south_terms as $term) { ?>
+                                    <li><label>
+                                            <?= $term->name ?>
+                                            <input type="checkbox" value="<?= $term->slug ?>">
+                                            <span class="checkmark"></span>
+                                        </label></li>
+                                <?php }
+                                ?>
+                            </ul>
+                        </form>
+                        <div class="search-tours__overlay" style="display:none;"></div>
+                    </div>
+                    <div class="search-subdistrict search-filter search-tours">
+                        <form>
+                            <h5 class="search-reviews__heading slideup-parent">North of Bali</h5>
+                            <ul class="search-reviews__list slideup-child">
+                                <?php
+                                $south_terms = get_terms([
+                                    'taxonomy' => 'north_of_bali',
+                                    'hide_empty' => false,
+                                    // 'childless'     => false,
+                                ]);
+
+                                foreach ($south_terms as $term) { ?>
+                                    <li><label>
+                                            <?= $term->name ?>
+                                            <input type="checkbox" value="<?= $term->slug ?>">
+                                            <span class="checkmark"></span>
+                                        </label></li>
+                                <?php }
+                                ?>
+                            </ul>
+                        </form>
+                        <div class="search-tours__overlay" style="display:none;"></div>
+                    </div>
+                    <div class="search-subdistrict search-filter search-tours">
+                        <form>
+                            <h5 class="search-reviews__heading slideup-parent">East of Bali</h5>
+                            <ul class="search-reviews__list slideup-child">
+                                <?php
+                                $south_terms = get_terms([
+                                    'taxonomy' => 'east_of_bali',
+                                    'hide_empty' => false,
+                                    // 'childless'     => false,
+                                ]);
+
+                                foreach ($south_terms as $term) { ?>
+                                    <li><label>
+                                            <?= $term->name ?>
+                                            <input type="checkbox" value="<?= $term->slug ?>">
+                                            <span class="checkmark"></span>
+                                        </label></li>
+                                <?php }
+                                ?>
+                            </ul>
+                        </form>
+                        <div class="search-tours__overlay" style="display:none;"></div>
+                    </div>
+                    <div class="search-subdistrict search-filter search-tours">
+                        <form>
+                            <h5 class="search-reviews__heading slideup-parent">Center of Bali</h5>
+                            <ul class="search-reviews__list slideup-child">
+                                <?php
+                                $south_terms = get_terms([
+                                    'taxonomy' => 'center_of_bali',
+                                    'hide_empty' => false,
+                                    // 'childless'     => false,
+                                ]);
+
+                                foreach ($south_terms as $term) { ?>
+                                    <li><label>
+                                            <?= $term->name ?>
+                                            <input type="checkbox" value="<?= $term->slug ?>">
+                                            <span class="checkmark"></span>
+                                        </label></li>
+                                <?php }
+                                ?>
+                            </ul>
+                        </form>
+                        <div class="search-tours__overlay" style="display:none;"></div>
+                    </div>
 
                     </div>
 

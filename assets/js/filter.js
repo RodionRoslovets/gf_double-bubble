@@ -783,6 +783,52 @@ jQuery(function ($) {
     //     select = $(this).val();
     // });
 
+    $('.search-filter.search-tours').on('input', 'form', function () {
+        let filterRestaurants = $(this);
+        let dataTermsRestaurants = filterRestaurants.serializeArray();
+        // let val = $("#slider-range").slider('values');
+        // let min_price = val[0];
+        // let max_price = val[1];
+        // console.log(dataTerms);
+        // let linkP = location.href;
+
+        let districts = [...document.querySelectorAll('.search-subdistrict input[type="checkbox"]')]
+            .filter(checkbox=>checkbox.checked)
+            .map(checkbox=>checkbox.value);
+        dataTermsRestaurants.push(
+            // {name: "link", value: linkP},
+            { name: "action", value: 'tours' },
+            // { name: "min_price", value: min_price },
+            // { name: "max_price", value: max_price },
+            { name: "count_page", value: count_page },
+            // { name: "grid-price", value: select },
+            // { name: "count_page", value: count_page },
+            { name: "districts", value: districts },
+        );
+        // console.log(dataTermsRestaurants);
+        $.ajax({
+            url: ajax_pagination_tours.ajaxurl,
+            data: dataTermsRestaurants,
+            type: 'POST',
+            beforeSend: function (xhr) {
+                $('.search-filter.search-tours .search-tours__overlay').fadeIn(300);
+                mainBoxTours.animate({ opacity: 0.7 }, 300);
+            },
+            success: function (posts) {
+                if (posts) {
+
+                    mainBoxTours.html(posts); // insert new posts
+                    // console.log(dataTermsRestaurants);
+                }
+                $('.search-filter.search-tours .search-tours__overlay').fadeOut(300);
+                mainBoxTours.animate({ opacity: 1 }, 300);
+
+            }
+
+        });
+
+    });
+
 
     // Ajax функция
     function ajaxPageTours(linkPageTours) {

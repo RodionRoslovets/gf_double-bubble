@@ -150,6 +150,47 @@ function true_filter_tours(){
         );
     }
 
+    if($_POST['districts']){
+        $subdistricts = explode(',', $_POST['districts']);
+
+        $districts = ['south_of_bali', 'south_west_of_bali', 'west_of_bali', 'north_of_bali', 'east_of_bali', 'center_of_bali'];
+
+        $subdistricts_slugs = [];
+
+        $count = count($subdistricts);
+
+        foreach($subdistricts as $elem){
+            for($i = 0; $i < $count; $i++){
+
+                $subdistricts_slugs[$i]['relation'] = 'OR';
+
+                foreach($districts as $district){
+                    $subdistricts_slugs[$i][] = [
+                        'taxonomy' => $district,
+                        'field' => 'slug',
+                        'terms'    => $elem,
+                        'operator' => 'IN'
+                    ];
+                }
+
+            }
+            
+        }
+
+        if(!$args['tax_query']){
+            $args['tax_query'] = ['relation' => 'AND'];
+        }
+
+        $args['tax_query'][] = [
+            'relation' => 'AND',
+            // array($subdistricts_slugs)
+        ];
+
+        foreach($subdistricts_slugs as $slug){
+            $args['tax_query'][0][] = $slug;
+        }
+    }
+
 
 
 
@@ -162,43 +203,43 @@ function true_filter_tours(){
 //    var_dump($args);
 //    echo '</pre>';
 
-    if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-        <!-- post -->
-        <?php $villa_data = get_field('villa_data'); ?>
-        <div class="col-lg-4 col-sm-6 d-flex justify-content-center">
-            <div class="restaurants-preview__item">
-                <a href="<?php the_permalink(); ?>" class="restaurants-preview__item_image">
-                    <?php the_post_thumbnail(); ?>
-                </a>
+if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+<!-- post -->
+    <?php $tours = get_field('tours'); ?>
+    <div class="col-lg-4 col-sm-6 d-flex justify-content-center">
+        <div class="restaurants-preview__item">
+            <a href="<?php the_permalink(); ?>" class="restaurants-preview__item_image">
+                <?php the_post_thumbnail(); ?>
+            </a>
 
-                <div class="restaurants-preview__item_content">
-                    <a href="<?php the_permalink(); ?>">
-                        <h5><?php the_title(); ?></h5>
-                    </a>
-                    <div class="rating-group">
-                        <?php echo do_shortcode('[average_rating]') ?>
-<!--                        <span>9.2</span>-->
-<!--                        <div class="star-block">-->
-<!--                            <img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-full.svg" alt="">-->
-<!--                            <img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-full.svg" alt="">-->
-<!--                            <img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-full.svg" alt="">-->
-<!--                            <img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-empty.svg" alt="">-->
-<!--                            <img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-empty.svg" alt="">-->
-<!--                        </div>-->
-                    </div>
-                    <div class="price-in-grid">
-                        <span><?php echo $villa_data['price'] ?></span>
-                        <span>$</span>
-                    </div>
+            <div class="restaurants-preview__item_content">
+                <a href="<?php the_permalink(); ?>">
+                    <h5><?php the_title(); ?></h5>
+                </a>
+                <div class="rating-group">
+                    <?php echo do_shortcode('[average_rating]') ?>
+<!--                                                <span>9.2</span>-->
+<!--                                                <div class="star-block">-->
+<!--                                                    <img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-full.svg" alt="">-->
+<!--                                                    <img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-full.svg" alt="">-->
+<!--                                                    <img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-full.svg" alt="">-->
+<!--                                                    <img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-empty.svg" alt="">-->
+<!--                                                    <img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/star-empty.svg" alt="">-->
+<!--                                                </div>-->
                 </div>
-<!--                <a class="like-btn" href="#"><img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/blue-heart.svg" alt=""></a>-->
-                <?php echo do_shortcode('[favorite_button]') ?>
+                <div class="price-in-grid">
+                    <span><?php echo esc_html( $tours['price'] ); ?></span>
+                    <span>$</span>
+                </div>
             </div>
+<!--                                        <a class="like-btn" href="#"><img src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/blue-heart.svg" alt=""></a>-->
+            <?php echo do_shortcode('[favorite_button]') ?>
         </div>
+    </div>
     <?php endwhile; ?>
         <!-- post navigation -->
     <?php else: ?>
-        <!--no posts found-->
+        <p>Nothing found</p>
     <?php endif; ?>
 
     <div class="pagination-block">
