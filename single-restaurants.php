@@ -572,11 +572,28 @@ while (have_posts()) :
                 if( $menu ): ?>
                     <div class="menu-foto-slider" data-width="100%" data-nav="thumbs" data-autoplay="false" data-allowfullscreen="native" style="width:100%">
                         <?php foreach( $menu as $image ): ?>
-                            <a href="<?php echo esc_url($image['url']); ?>"><img src="<?php echo esc_url($image['url']); ?>"></a>
+                            <a href="<?php echo esc_url($image['url']); ?>"><img style="" src="<?php echo esc_url($image['url']); ?>"></a>
                         <?php endforeach; ?>
                     </div>
                 <?php endif; ?>
             </div>
+            <style>
+                .menu-foto-slider a img{
+                    width:auto;
+                    max-height:80vh;
+                    margin:0 auto;
+                }
+                @media screen and (max-width:768px){
+                    .menu-foto-slider a img{
+                        width:100%;
+                        margin:10vh auto 0;
+                    }
+                    .menu-foto-slider .slick-track{
+                        display:flex;
+                        align-items: center;
+                    }
+                }
+            </style>
         </div>
         <a class="close-menu-slider" href="#">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/cross-modal.svg" alt="">
