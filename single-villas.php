@@ -172,16 +172,19 @@ while (have_posts()) :
                                         </a>
                                     </div>
                                 <?php endif; ?>
+                                 <?php if (get_field('email_owner_villa')) : ?>
                                 <div class="villa-top-page__book-btns">
                                     <a href="#" class="book-btn bg-btn-red">
                                         Book now
                                     </a>
-                                    <?php if (get_field('email_owner_villa')) : ?>
+                                   
                                         <a href="#" class="book-btn bg-btn-white call-contact-owner">
                                             Contact owner
                                         </a>
-                                    <?php endif; ?>
+                                    
                                 </div>
+
+                                <?php endif; ?>
                                 <?php if ($villa_data['go_to_website']) : ?>
                                     <div class="villa-top-page__to-site">
                                         <a href="<?php echo $villa_data['go_to_website'] ?>" target="_blank">Go to
@@ -190,10 +193,10 @@ while (have_posts()) :
                                 <?php endif; ?>
                                 <div class="villa-top-page__social-list">
                                     <ul><?php if ($villa_data['whatsapp']) : ?>
-                                            <li><a href="<?php echo $villa_data['whatsapp'] ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/whatsup.svg" alt=""></a></li>
+                                            <li><a href="https://api.whatsapp.com/send?phone=<?php echo $villa_data['whatsapp'] ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/whatsup.svg" alt=""></a></li>
                                         <?php endif; ?>
                                         <?php if ($villa_data['telegram']) : ?>
-                                            <li><a href="<?php echo $villa_data['telegram'] ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/telegram.svg" alt=""></a></li>
+                                            <li><a href="https://t.me/<?php echo $villa_data['telegram'] ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/telegram.svg" alt=""></a></li>
                                         <?php endif; ?>
                                         <?php if ($villa_data['viber']) : ?>
                                             <li><a href="<?php echo $villa_data['viber'] ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/viber.svg" alt=""></a></li>

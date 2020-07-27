@@ -105,8 +105,8 @@ while (have_posts()) :
                             $info = get_field('restaurant_info'); ?>
                             <div class="restaurant-top-page__info-block">
                                 <div class="middle-check-price">
-                                    <p><?php echo $info['price']?><span>&#36;</span></p>
-                                    <p>middle check</p>
+                                    <p><?php echo $info['price']?><span><?php echo $info['price_symbol'] ? $info['price_symbol'] : '$';?></span></p>
+                                    <p><?php echo $info['price_description'] ? $info['price_description'] : 'middle check';?></p>
                                 </div>
                                 <div class="restaurant-top-page__info-address">
                                     <p><img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/mark.svg" alt=""></p>
