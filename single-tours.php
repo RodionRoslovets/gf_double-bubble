@@ -147,16 +147,16 @@ while (have_posts()) :
                             <div class="tour-top-page__info-options">
                                 <ul>
                                     <?php
-                                     $post = get_post();
-                                     $terms = get_terms([
+                                    $post = get_post();
+                                    $terms = get_terms([
                                         'taxonomy' => 'tour_facilities',
                                         'hide_empty' => false,
                                         'get'           => 'all',
                                         'childless'     => true,
                                         'object_ids' => $post->ID,
                                     ]);
-                                    foreach($terms as $term){
-                                        echo '<li>'.$term->name.'</li>';
+                                    foreach ($terms as $term) {
+                                        echo '<li>' . $term->name . '</li>';
                                     }
                                     ?>
                                 </ul>
@@ -171,16 +171,24 @@ while (have_posts()) :
                                 <!--                                --><?php //if ( function_exists( 'wfp_button' ) ) wfp_button(); 
                                                                         ?>
                             </div>
+                            <?php
+                            if (get_field('map_link')) {
+                            ?>
+                                <div class="map">
+                                    <a target="blank" href="<?php the_field('map_link'); ?>">See map</a></div>
+                            <?php
+                            }
+                            ?>
                             <!--                            --><?php //do_shortcode('[favorite-post]') 
                                                                 ?>
                             <?php $cam = get_field('restaurant_web_cam'); ?>
-                            <?php if ($cam): ?>
-                            <div class="web-cam-restaurant">
-                                <div class="web-video">
-                                    <?php echo $cam;?>
+                            <?php if ($cam) : ?>
+                                <div class="web-cam-restaurant">
+                                    <div class="web-video">
+                                        <?php echo $cam; ?>
+                                    </div>
+                                    <h5>Web-cam in tour</h5>
                                 </div>
-                                <h5>Web-cam in tour</h5>
-                            </div>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -192,17 +200,7 @@ while (have_posts()) :
                     <p><?php the_content(); ?></p>
                 </div>
 
-                <?php 
-                if(get_field('map_link')){
-                    ?>
-                        <div class="map">
-                            <?php
-                                the_field('map_link');
-                            ?>
-                        </div>
-                    <?php
-                }
-                ?>
+
 
 
 
