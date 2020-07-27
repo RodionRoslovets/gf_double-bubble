@@ -106,6 +106,42 @@ while (have_posts()) :
                                     </div>
                                 <?php endif; ?>
 
+                                <?php if(get_field('rent_transport_data')):
+                                        $transport_data = get_field('rent_transport_data');
+                                        if($transport_data['address']){
+                                            echo '<p>'.$transport_data['address'].'</p>';
+                                        }
+                                        if($transport_data['addres_link']){
+                                            echo '<p><a href="'.$transport_data['addres_link'].'">Go to map page</a></p>';
+                                        }
+                                        if($transport_data['phone']){
+                                            echo '<p><a href="tel:'.$transport_data['phone'].'">'.$transport_data['phone'].'</a></p>';
+                                        }
+                                        if($transport_data['go_to_website']){
+                                            echo '<p><a href="'.$transport_data['go_to_website'].'">Go to website</a></p>';
+                                        }
+                                        
+                                        ?><?php endif; ?>
+                                        <div class="villa-top-page__social-list">
+                                    <ul><?php if ($transport_data['whatsapp']) : ?>
+                                            <li><a href="https://api.whatsapp.com/send?phone=<?php echo $transport_data['whatsapp'] ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/whatsup.svg" alt=""></a></li>
+                                        <?php endif; ?>
+                                        <?php if ($transport_data['telegram']) : ?>
+                                            <li><a href="https://t.me/<?php echo $transport_data['telegram'] ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/telegram.svg" alt=""></a></li>
+                                        <?php endif; ?>
+                                        <?php if ($transport_data['viber']) : ?>
+                                            <li><a href="<?php echo $transport_data['viber'] ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/viber.svg" alt=""></a></li>
+                                        <?php endif; ?>
+                                        <?php if ($transport_data['facebook']) : ?>
+                                            <li><a href="<?php echo $transport_data['facebook'] ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/facebook.svg" alt=""></a></li>
+                                        <?php endif; ?>
+                                        <?php if ($transport_data['instagram']) : ?>
+                                            <li><a href="<?php echo $transport_data['instagram'] ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/instagram.svg" alt=""></a></li>
+                                        <?php endif; ?>
+                                    </ul>
+                                </div>
+                                
+
                             </div>
 
                             <div class="tour-top-page__info-options">
