@@ -20,15 +20,17 @@ get_header('secondary');
                     <div class="block-title-page">
                         <h1 class="main-title-page">Tours</h1>
 <!--                        <div class="filter-grid">-->
-<!--                            <img class="mobile-filter" src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/icons/sort.svg" alt="">-->
+<!--                            -->
 <!--                            <p>sorting:</p>-->
 <!--                            <ul>-->
 <!--                                <li class="filter-grid__active">rating</li>-->
 <!--                                <li>around the area</li>-->
 <!--                            </ul>-->
 <!--                        </div>-->
+
                         <form class="tours-form" name="average-rating">
                             <p>filter: </p>
+                            
                             <select class="filter-grid-tours__average-rating" name="average-rating">
                                     <option value="">-Average rating-</option>
                                     <option value="5">Excellent</option>
@@ -38,10 +40,11 @@ get_header('secondary');
                                     <option value="1">Terrible</option>
                                     
                             </select>
+                            <img class="mobile-filter" src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/sort.svg" alt="">
                         </form>
                     </div>
                 </div>
-
+                
                 <div class="row villas-grid">
 
                     <div class="col-lg-3 search-villas" id="search-villas">

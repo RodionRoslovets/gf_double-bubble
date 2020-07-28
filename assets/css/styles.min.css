@@ -11284,7 +11284,7 @@ a.dev {
 .filter-grid-restaurants form label,
 .filter-grid-restaurants form select {
   cursor: pointer;
-  margin-right: 14px;
+  /* margin-right: 14px; */
   color: #0085ff;
   height: 27px;
   padding: 0 5px;
@@ -14998,6 +14998,10 @@ ul#menu-header-left-menu li.menu-item-has-children:hover > a::after{
   text-align: right;
 }
 
+.tours-form img{
+  display:none;
+}
+
 @media (max-width: 1200px) {
   .show-child-comment {
     width: 20%;
@@ -15008,6 +15012,13 @@ ul#menu-header-left-menu li.menu-item-has-children:hover > a::after{
   }
   .rent-transport-item__facilities{
     display: none;
+  }
+  .tours-form{
+    width: 100%;
+  }
+  .tours-form img{
+    display: block;
+    margin-left: auto;
   }
 }
 
