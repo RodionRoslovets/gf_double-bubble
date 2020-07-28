@@ -106,23 +106,23 @@ while (have_posts()) :
                                     </div>
                                 <?php endif; ?>
 
-                                <?php if(get_field('rent_transport_data')):
-                                        $transport_data = get_field('rent_transport_data');
-                                        if($transport_data['address']){
-                                            echo '<p>'.$transport_data['address'].'</p>';
-                                        }
-                                        if($transport_data['addres_link']){
-                                            echo '<p><a href="'.$transport_data['addres_link'].'">Go to map page</a></p>';
-                                        }
-                                        if($transport_data['phone']){
-                                            echo '<p><a href="tel:'.$transport_data['phone'].'">'.$transport_data['phone'].'</a></p>';
-                                        }
-                                        if($transport_data['go_to_website']){
-                                            echo '<p><a href="'.$transport_data['go_to_website'].'">Go to website</a></p>';
-                                        }
-                                        
-                                        ?><?php endif; ?>
-                                        <div class="villa-top-page__social-list">
+                                <?php if (get_field('rent_transport_data')) :
+                                    $transport_data = get_field('rent_transport_data');
+                                    if ($transport_data['address']) {
+                                        echo '<p>' . $transport_data['address'] . '</p>';
+                                    }
+                                    if ($transport_data['addres_link']) {
+                                        echo '<p><a href="' . $transport_data['addres_link'] . '">Go to map page</a></p>';
+                                    }
+                                    if ($transport_data['phone']) {
+                                        echo '<p><a href="tel:' . $transport_data['phone'] . '">' . $transport_data['phone'] . '</a></p>';
+                                    }
+                                    if ($transport_data['go_to_website']) {
+                                        echo '<p><a href="' . $transport_data['go_to_website'] . '">Go to website</a></p>';
+                                    }
+
+                                ?><?php endif; ?>
+                                <div class="villa-top-page__social-list">
                                     <ul><?php if ($transport_data['whatsapp']) : ?>
                                             <li><a href="https://api.whatsapp.com/send?phone=<?php echo $transport_data['whatsapp'] ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/whatsup.svg" alt=""></a></li>
                                         <?php endif; ?>
@@ -140,7 +140,7 @@ while (have_posts()) :
                                         <?php endif; ?>
                                     </ul>
                                 </div>
-                                
+
 
                             </div>
 
@@ -169,6 +169,41 @@ while (have_posts()) :
                                 <!--                                <a href="#">To favorites</a>-->
                                 <?php echo do_shortcode('[favorite_button]') ?>
                             </div>
+                            <?php $price_day = get_field('price_per');
+                                if ($price_day) : ?>
+                            <div class="villa-top-page__info-block desktop-visible" style="margin-top:16px">
+                                
+                                    <table class="price-day">
+                                        <thead>
+                                            <tr>
+                                                <th>Price per:</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php if ($price_day['day'])  : ?>
+                                            <tr>
+                                                <td>Day:</td>
+                                                <td><?php echo $price_day['day'] ?> <span>&#36;</span></td>
+                                            </tr>
+                                            <?php endif; ?>
+                                            <?php if ($price_day['week'])  : ?>
+                                            <tr>
+                                                <td>Week:</td>
+                                                <td><?php echo $price_day['week'] ?> <span>&#36;</span></td>
+                                            </tr>
+                                            <?php endif; ?>
+                                            <?php if ($price_day['month'])  : ?>
+                                            <tr>
+                                                <td>Month:</td>
+                                                <td><?php echo $price_day['month'] ?> <span>&#36;</span></td>
+                                            </tr>
+                                            <?php endif; ?>
+                                        </tbody>
+
+                                    </table>
+                                
+                            </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
