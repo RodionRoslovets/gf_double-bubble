@@ -90,12 +90,13 @@ while (have_posts()) :
 
                     </div>
                     <div class="col-lg-4">
-                        <?php $tours = get_field('rent_transport_data'); ?>
+                        <?php $tours = get_field('rent_transport_data'); 
+                        $tours['price_multiplier'] = $tours['price_multiplier'] ? $tours['price_multiplier'] : 30;?>
                         <div class="villa-top-page__info">
                             <div class="villa-top-page__info-block">
                                 <div class="tour-top-page__price">
                                     <p><?php echo esc_html($tours['price']); ?><span>&#36;</span></p>
-                                    <p style="flex-grow:1">per day if rented for 30 days Total 30 days: <?php echo esc_html($tours['price'] * 30); ?> $</p>
+                                    <p style="flex-grow:1">per day if rented for <?php echo $tours['price_multiplier']; ?> days <br> Total <?php echo $tours['price_multiplier']; ?> days: <?php echo esc_html($tours['price'] * $tours['price_multiplier']); ?> $</p>
                                 </div>
 
                                 <?php if (get_field('email_owner_villa')) : ?>

@@ -81,7 +81,7 @@ get_header('secondary');
                         <div class="clubs-item">
                             <a href="<?php the_permalink(); ?>" class="link-page"></a>
 
-                            <?php the_post_thumbnail(); ?>
+                            <?php the_post_thumbnail(array(275, 412)); ?>
                             <div class="clubs-item-content">
                                 <h4><?php the_title(); ?></h4>
                                 <?php the_excerpt(); ?>

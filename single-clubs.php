@@ -256,7 +256,7 @@ while ( have_posts() ) :
                                 <?php $event = get_field('event'); ?>
                                 <div class="slider-events-item">
                                     <a href="<?php the_permalink(); ?>">
-                                        <?php the_post_thumbnail(); ?>                                </a>
+                                        <?php the_post_thumbnail(array(275, 412)); ?>                                </a>
                                     <?php echo do_shortcode('[favorite_button]') ?>
                                     <span class="date-label-red"><?php echo esc_html( $event['date'] ); ?></span>
                                 </div>

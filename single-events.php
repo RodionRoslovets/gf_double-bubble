@@ -225,7 +225,8 @@ the_post();
 
                         <div class="slider-events-item">
                             <a href="<?php the_permalink(); ?>">
-                                <?php the_post_thumbnail(); ?>
+                            <?php the_post_thumbnail(array(275, 412)); ?>
+
                             </a>
                             <h5><?php the_title(); ?></h5>
                             <span class="date-other-event"><?php echo esc_html( $event['date'] ); ?></span>
