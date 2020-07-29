@@ -126,6 +126,9 @@ get_header('secondary');
                         <?php echo do_shortcode('[clear_favorites_button]'); ?>
                         <?php endif;?>
                     <?php else : ?>
+                        <?php if($_GET['login']=='failed'):?>
+                            <p class="login-error">Check the entered data and try again</p>
+                        <?php endif; ?>
                         <div class="log-in-form col-md-6">
                             <?php
                             $args = array(

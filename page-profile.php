@@ -115,6 +115,9 @@ get_header('secondary');
                             </div>
                         </div>
                     <?php else : ?>
+                        <?php if($_GET['login']=='failed'):?>
+                            <p class="login-error">Check the entered data and try again</p>
+                        <?php endif; ?>
                         <div class="log-in-form col-md-6">
                             <?php
                             $args = array(
@@ -137,7 +140,7 @@ get_header('secondary');
                             wp_login_form($args); ?>
                         </div>
                     <?php endif; ?>
-                </div>
+                </p>
                 <div class="col-md-3">
 
                 </div>

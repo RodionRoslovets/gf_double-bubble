@@ -328,3 +328,22 @@ function gf_get_min_max_by_type($post_type, $field_name){
 
     return $prices;
 }
+
+
+## Оставляет пользователя на той же странице при вводе неверного логина/пароля в форме авторизации wp_login_form()
+add_action( 'wp_login_failed', 'my_front_end_login_fail' );
+function my_front_end_login_fail( $username ) {
+	$referrer = $_SERVER['HTTP_REFERER'];  // откуда пришел запрос
+
+	// Если есть referrer и это не страница wp-login.php
+	if( !empty($referrer) && !strstr($referrer,'wp-login') && !strstr($referrer,'wp-admin') ) {
+		wp_redirect( add_query_arg('login', 'failed', $referrer ) );  // редиркетим и добавим параметр запроса ?login=failed
+		exit;
+	}
+}
+
+//При выходе из аккаунта кидает на главную
+add_filter( 'logout_redirect', 'my_front_end_logout', 10, 3 );
+function my_front_end_logout( ){
+	return home_url();
+}

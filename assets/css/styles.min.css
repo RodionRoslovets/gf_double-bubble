@@ -15002,6 +15002,10 @@ ul#menu-header-left-menu li.menu-item-has-children:hover > a::after{
   display:none;
 }
 
+.login-error{
+  color:#EB5757;
+}
+
 @media (max-width: 1200px) {
   .show-child-comment {
     width: 20%;
