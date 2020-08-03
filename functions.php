@@ -347,3 +347,30 @@ add_filter( 'logout_redirect', 'my_front_end_logout', 10, 3 );
 function my_front_end_logout( ){
 	return home_url();
 }
+
+add_action('admin_menu', function(){
+	add_menu_page( 'Help', 'Help', 'read_private_posts','help', 'show_help_links'); 
+} );
+
+function show_help_links(){
+    ?>
+    <h2><?php echo get_admin_page_title(); ?></h2>
+    <?php
+    $args = array(
+        'post_type'   => 'help',
+    );
+
+    $posts = query_posts($args);
+
+    if ($posts) {
+        foreach ($posts as $post) {
+            the_post();    
+            ?>
+                <p><a href="<?php the_permalink();?>" target="blank"><?php the_title();?></a></p>
+            <?php
+        wp_reset_postdata();
+        }
+    } else {
+        echo '<p>No instructions</p>';
+    }
+}

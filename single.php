@@ -7,7 +7,7 @@
  * @package double
  */
 
-get_header();
+get_header('secondary');
 ?>
 
 	<div id="primary" class="content-area">

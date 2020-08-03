@@ -101,12 +101,147 @@ function true_filter_rent_transport(){
         ];
 
         foreach($subdistricts_slugs as $slug){
-            $args['tax_query'][0][] = $slug;
+            $args['tax_query'][][] = $slug;
         }
     }
 
+    if($_POST['car_body']){
+        $bodies = explode(',', $_POST['car_body']);
 
+        $bodies_query = [];
 
+        foreach($bodies as $body){
+            $bodies_query[] = [
+                'taxonomy' => 'car_body',
+                'field' => 'slug',
+                'terms'    => $body,
+            ];
+        }
+
+        //Узнать как распаковать массив bodies_query
+        if(!$args['tax_query']){
+            $args['tax_query'] = [
+                'relation' => 'AND',
+                [
+                    'relation' => 'OR',
+                    $bodies_query[0],
+                    $bodies_query[1],
+                    $bodies_query[2],
+                    $bodies_query[3],
+                ]
+            ];
+        } else {
+            $args['tax_query'][] = [
+                'relation' => 'OR',
+                $bodies_query[0],
+                $bodies_query[1],
+                $bodies_query[2],
+                $bodies_query[3],
+            ];
+        }
+    }
+
+    if($_POST['car_transmission']){
+        $transmission = explode(',', $_POST['car_transmission']);
+
+        $transmission_query = [];
+
+        foreach($transmission as $transm){
+            $transmission_query[] = [
+                'taxonomy' => 'car_transmission',
+                'field' => 'slug',
+                'terms'    => $transm,
+            ];
+        }
+
+        //Узнать как распаковать массив transmission_query
+        if(!$args['tax_query']){
+            $args['tax_query'] = [
+                'relation' => 'AND',
+                [
+                    'relation' => 'OR',
+                    $transmission_query[0],
+                    $transmission_query[1],
+                ]
+            ];
+        } else {
+            $args['tax_query'][] = [
+                'relation' => 'OR',
+                $transmission_query[0],
+                $transmission_query[1],
+            ];
+        }
+    }
+
+    if($_POST['car_seats']){
+        $seats = explode(',', $_POST['car_seats']);
+
+        $seats_query = [];
+
+        foreach($seats as $seat){
+            $seats_query[] = [
+                'taxonomy' => 'car_seats',
+                'field' => 'slug',
+                'terms'    => $seat,
+            ];
+        }
+
+        //Узнать как распаковать массив seats_query
+        if(!$args['tax_query']){
+            $args['tax_query'] = [
+                'relation' => 'AND',
+                [
+                    'relation' => 'OR',
+                    $seats_query[0],
+                    $seats_query[1],
+                    $seats_query[2],
+                ]
+            ];
+        } else {
+            $args['tax_query'][] = [
+                'relation' => 'OR',
+                $seats_query[0],
+                $seats_query[1],
+                $seats_query[2],
+            ];
+        }
+    }
+
+    if($_POST['motorcycle_type']){
+        $types = explode(',', $_POST['motorcycle_type']);
+
+        $types_query = [];
+
+        foreach($types as $type){
+            $types_query[] = [
+                'taxonomy' => 'motorcycle_type',
+                'field' => 'slug',
+                'terms'    => $type,
+            ];
+        }
+
+        //Узнать как распаковать массив seats_query
+        if(!$args['tax_query']){
+            $args['tax_query'] = [
+                'relation' => 'AND',
+                [
+                    'relation' => 'OR',
+                    $types_query[0],
+                    $types_query[1],
+                    $types_query[2],
+                    $types_query[3],
+                ]
+            ];
+        } else {
+            $args['tax_query'][] = [
+                'relation' => 'OR',
+                $types_query[0],
+                $types_query[1],
+                $types_query[2],
+                $types_query[3],
+            ];
+        }
+    }
 
     // для таксономий
 //    if( isset( $_POST['categoryfilter'] ))

@@ -993,7 +993,6 @@ jQuery(function ($) {
     //     console.log(1);
     // }));
 
-    //Villa
 
     let dataTerms_rent_transport = [];
 
@@ -1007,7 +1006,21 @@ jQuery(function ($) {
         let districts = [...document.querySelectorAll('.search-subdistrict input[type="checkbox"]')]
             .filter(checkbox=>checkbox.checked)
             .map(checkbox=>checkbox.value);
-        // console.log(dataTerms);
+
+        let bodies = [...document.querySelectorAll('.search-car-body input[type="checkbox"]')]
+            .filter(checkbox=>checkbox.checked)
+            .map(checkbox=>checkbox.value);
+        let transmission = [...document.querySelectorAll('.search-car-transmission input[type="checkbox"]')]
+            .filter(checkbox=>checkbox.checked)
+            .map(checkbox=>checkbox.value);
+        let seats = [...document.querySelectorAll('.search-car-seats input[type="checkbox"]')]
+            .filter(checkbox=>checkbox.checked)
+            .map(checkbox=>checkbox.value);
+       
+        let motorcycle_type = [...document.querySelectorAll('.search-motorcycle-type input[type="checkbox"]')]
+            .filter(checkbox=>checkbox.checked)
+            .map(checkbox=>checkbox.value);
+       
         // let linkP = location.href;
         dataTerms_rent_transport.push(
             // {name: "link", value: linkP},
@@ -1018,12 +1031,17 @@ jQuery(function ($) {
             { name: "grid-price", value: select },
             { name: "count_page", value: count_page },
             { name: "districts", value: districts },
+            { name: "car_body", value:bodies},
+            { name: "car_transmission", value:transmission},
+            { name: "car_seats", value:seats},
+            { name:'motorcycle_type', value:motorcycle_type}
         );
         $.ajax({
             url: ajax_pagination_rent_transport.ajaxurl,
             data: dataTerms_rent_transport,
             type: 'POST',
             beforeSend: function (xhr) {
+                 console.log(dataTerms_rent_transport);
                 $('.search-filter.search-transport .search-transport__overlay').fadeIn(300);
                 mainBoxRentTransport.animate({ opacity: 0.7 }, 300);
             },
